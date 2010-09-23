@@ -7,10 +7,11 @@ set :domain, 'larubyconf.com'
 set :project, 'larc2010'
 
 # version control config
-set :scm, :subversion
+set :scm, 'git'
 set :scm_username, 'deploy'
 set :scm_password, 'larubyconf'
-set :repository, "http://svn.#{domain}/#{project}/trunk/"
+set :repository, "git@github.com:larubyconf/site"
+set :branch, "master"
 
 set :application, "2010.larubyconf.com"
 
