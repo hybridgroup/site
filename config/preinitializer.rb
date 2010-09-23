@@ -1,1 +1,2 @@
-require 'config/gems'
+require 'rubygems'
+require 'isolate/now'
