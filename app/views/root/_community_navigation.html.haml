@@ -1,0 +1,11 @@
+.meta-nav
+  .menu
+    %ul
+      %li.first{:style => 'display: inline'}
+        =link_to_unless_current 'Activity', community_path
+      %li{:style => 'display: inline'}
+        =link_to_unless_current 'Members', members_path
+      %li{:style => 'display: inline'}
+        =link_to_unless_current 'Proposals', proposals_path
+      %li{:style => 'display: inline'}
+        =link_to_unless_current 'Dashboard', dash_path

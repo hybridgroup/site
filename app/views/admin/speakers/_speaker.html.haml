@@ -1,0 +1,13 @@
+%tr
+  %td
+    =speaker.id
+  %td
+    =speaker.profile.id unless speaker.profile.nil?
+  %td
+    =speaker.profile.full_name unless speaker.profile.nil?
+  %td
+    =speaker.bio
+  %td
+    =link_to 'Edit', edit_admin_speaker_path(speaker)
+    |
+    =link_to 'Delete', admin_speaker_path(speaker), :method => 'delete'

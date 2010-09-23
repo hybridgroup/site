@@ -1,0 +1,31 @@
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h1 Administration
+=render :partial => 'admin/navigation'
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h2 News Items
+
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    =link_to 'Add News item', new_admin_news_item_path
+    %table.admin
+      %tr
+        %th
+          id
+        %th
+          Headline
+        %th
+          Author
+        %th
+          Display Date
+        %th
+          Expire Date
+        %th
+          Actions
+      =render :partial => 'news_item', :collection => @news_items
+    #news-items-pageination
+      =will_paginate @news_items, :params => {:controller => 'admin/news_items', :action => 'index' }, :class => 'not_ajax'

@@ -1,0 +1,34 @@
+-form_for @profile, :html => { :multipart => true } do |f|
+  =f.hidden_field :user_id
+  .form-field.required
+    %label{:for => 'profile_first_name'} First Name
+    =f.text_field :first_name
+  .form-field.required
+    %label{:for => 'profile_last_name'} Last Name
+    =f.text_field :last_name
+  .form-field
+    %label{:for => 'profile_location'} Location
+    =f.text_field :location
+  .form-field
+    %label{:for => 'profile_twitter_account'} Twitter Name
+    =f.text_field :twitter_account
+  .form-field
+    %label{:for => 'profile_company_name'} Company
+    =f.text_field :company_name
+  .form-field
+    %label{:for => 'profile_title'} Title
+    =f.text_field :title
+  .form-field
+    %label{:for => 'profile_gender'} Gender
+    =f.select :gender, Profile::GENDERS
+  .form-field
+    %label{:for => 'profile_tshirt_size'} T-Shirt Size
+    =f.select :tshirt_size, Profile::TSHIRT_SIZES
+  .form-field
+    %label{:for => 'profile_meal_preference'} Meal Preference
+    =f.select :meal_preference, Profile::MEAL_PREFERENCES
+  .form-field
+    %label{:for => 'profile_avatar'} Avatar
+    =f.file_field :avatar
+  =submit_tag "Save"
+  =submit_tag "Cancel"

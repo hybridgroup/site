@@ -1,0 +1,10 @@
+-form_for [:admin, @speaker] do |f|
+  .form-field.required
+    %label{:for => 'speaker_profile_id'} Profile
+    =f.collection_select(:profile_id, @profiles, :id, :full_name, {:prompt => "Select a Profile"})
+
+  .form-field.required
+    %label{:for => 'speaker_bio'} Bio
+    =f.text_area :bio, :size => '40x5'
+
+  =submit_tag "Save", :class => "button"

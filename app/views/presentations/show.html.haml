@@ -1,0 +1,10 @@
+%h1 Presentation
+= link_to 'return to Schedule', presentations_path
+.proposal
+  %p.title
+    =@presentation.title
+  %p.submitted-by
+    %span Presented By:
+    =display_speakers @presentation
+  %p.abstract
+    =Haml::Engine.new(@presentation.abstract).render

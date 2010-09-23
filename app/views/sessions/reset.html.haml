@@ -1,0 +1,12 @@
+#home.module.reset-password
+
+  =render :partial => 'shared/corners'
+
+  #sign-in.module-inner
+    %h1 Reset Password
+    -form_tag reset_session_path do
+      %label{:for => :email} Email
+      %span
+        =text_field_tag :email
+      %span.submit
+        =submit_tag "Reset Password", :class => "button"

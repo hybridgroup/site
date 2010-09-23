@@ -1,0 +1,13 @@
+#comment_form
+  -form_remote_for :proposal_comment, :url => proposal_comments_path(@proposal), :update => { :success => @proposal.id } do |f|
+    #comment_body_section
+      =f.error_messages
+
+      .comment_row
+        =f.label :message
+      %span.required
+        *
+      =f.text_area :message, :cols => 40, :rows => 4
+
+    %span.submit
+      =f.submit "Post Comment", :class => 'button'

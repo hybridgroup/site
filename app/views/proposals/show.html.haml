@@ -1,0 +1,8 @@
+-# TODO: Clean up this view, refactor with partials
+%h1 Presentation Proposal
+%ul.proposal
+  = render :partial => "proposal"
+  .actions
+    =link_to "View  #{pluralize(@proposal.user.proposals.size, 'proposal')} from #{@proposal.user.username}", user_proposals_path(@proposal.user)
+    |
+    =link_to "View all proposals", proposals_path

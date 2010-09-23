@@ -1,0 +1,5 @@
+=link_to '<< back to all sponsors', sponsors_path()
+%p
+  =link_to image_tag("#{@sponsor.logo.url}"), :url => @sponsor.url, :target => "_blank"
+%p
+  =Haml::Engine.new(@sponsor.blurb).render unless @sponsor.blurb.nil?

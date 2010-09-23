@@ -1,0 +1,8 @@
+#feedback_overlay
+  #feedback_container
+    = link_to_function('close', "$('feedback').update('')", :id => :feedback_close)
+
+    #feedback_form
+      = yield
+
+#feedback_screen

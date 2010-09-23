@@ -1,0 +1,16 @@
+-form_for [:admin, @news_item] do |f|
+  .form-field.required
+    %label{:for => 'news_item_headline'} Headline
+    =f.text_field :headline
+  .form-field.required
+    %label{:for => 'news_item_body'} Body
+    =f.text_area :body
+  .form-field.required
+    %label{:for => 'news_item_display_date'} Display Date
+    =f.text_field :display_date
+  .form-field.required
+    %label{:for => 'news_item_expire_date'} Expire Date
+    =f.text_field :expire_date
+
+  %span.submit
+    =submit_tag 'Save', :class => "button"

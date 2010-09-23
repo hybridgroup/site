@@ -1,0 +1,17 @@
+%tr
+  %td
+    =user.id
+  %td
+    =user.username
+  %td
+    =user.email
+  %td
+    =user.time_zone
+  %td.center
+    =user.admin
+  %td.center
+    =user.profile.nil? ? link_to('No', new_admin_user_profile_path(user)):'Yes'
+  %td
+    =link_to 'Edit', edit_admin_user_path(user)
+    |
+    =link_to 'Delete', admin_user_path(user), :method => 'delete'

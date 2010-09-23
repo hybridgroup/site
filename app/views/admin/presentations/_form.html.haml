@@ -1,0 +1,9 @@
+-form_for [:admin, @presentation] do |f|
+  .form-field.required
+    =f.label :presentation_date_time, "Date/Time"
+    =f.text_field :presentation_date_time
+  .form-field.required
+    =f.label :place_holder, "Title"
+    =f.text_field :place_holder
+
+  =f.submit "Save", :class => "button"

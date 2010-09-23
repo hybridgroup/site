@@ -1,0 +1,37 @@
+%li.proposal
+  .title
+    =link_to proposal.title, proposal_path(proposal)
+  .submitted-by
+    Submitted by:
+    =link_to proposal.user.username, user_path(proposal.user)
+  .liked
+    =liked_by_message proposal, session.user
+  .abstract
+    -unless @all
+      =RDiscount.new(proposal.tiny_abstract).to_html 
+      -unless proposal.tiny_abstract == proposal.abstract
+        =link_to 'Read full proposal', proposal_path(proposal)
+    -else
+      =RDiscount.new(proposal.abstract).to_html
+  .submitted-on
+    %span
+      Submitted on / Updated on:
+    =proposal.submitted_at.strftime("%D")
+    \/
+    =proposal.updated_at.strftime("%D")
+  .status
+    %span Status:
+    =proposal.status
+  .actions
+    -unless session.user.nil?
+      %span{:id => "like-#{proposal.id}"}
+        =render :partial => 'votes/unlike', :locals => { :proposal => proposal, :vote => @vote }
+      |
+      =link_to_remote 'Comment', :url => new_proposal_comment_path(proposal), :method => :get, :update => "new-comment-form-#{proposal.id}"
+      -if proposal.user == session.user
+        |
+        =link_to 'Edit', edit_proposal_path(proposal)
+        |
+        =link_to 'Remove', proposal_path(proposal), :method => :delete
+  %div{:id => proposal.id}
+    =render :partial => 'proposals/display_comments', :locals => { :proposal => proposal}

@@ -1,0 +1,105 @@
+!!! XML
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", :lan => "en"}
+  %head
+    %meta{:name => "verify-v1", :content => "FzRGVFVhBn8WwI5nk0gMaJ/Rrat+wUYBFsTnaS+Hsz8="}
+    %meta{:name => "description", :content => "LA Ruby Conference - Los Angeles area technology conference for Rubyists"}
+    %title
+      Los Angeles Ruby Conference 2010 | larubyconf.com
+    =stylesheet_link_tag "main"
+    =stylesheet_link_tag "user"
+    =stylesheet_link_tag "feedback"
+
+    =javascript_include_tag :defaults
+    =javascript_include_tag 'feedback'
+
+  %body
+    #container
+      #header
+        .former_h1
+          LA Ruby Conf
+        %span.description
+          Los Angeles Ruby Conference 2010
+        #meta
+          %ul
+            %li.first
+              -unless session.authenticated?
+               =link_to 'Login', new_session_path
+                %li
+                  =link_to 'Sign up', new_user_path
+              -else
+                Welcome back,
+                =session.user.username
+                %li
+                  =link_to 'My Profile', user_path(session.user)
+                -if session.user.admin?
+                  %li
+                    =link_to 'Administration', admin_path
+                %li
+                  =link_to "Logout", session_path, :method => :delete
+        #top-announcement
+          LA Ruby Conference 2010 - only
+          = distance_of_time_in_words(Date.today,Date.parse('2010-02-19')) 
+          away
+
+      #navbar
+        %ul#suckerfish
+          %li
+            =link_to_unless_current 'Home', root_path
+          %li
+            =link_to_unless_current 'Community', community_path
+          %li
+            =link_to_unless_current 'Venue', venue_path
+          %li
+            =link_to_unless_current 'Speakers', speakers_path
+          %li
+            =link_to_unless_current 'Schedule', presentations_path
+          %li
+            =link_to_unless_current 'Sponsors', sponsors_path
+          %li
+            =link_to_unless_current "Last Year", 'http://2009.larubyconf.com'
+          %li
+            =link_to_unless_current 'Contact Us', contact_us_path
+
+      #main
+        #leftcol
+          %h2 Announcement
+          #announcement
+            %h3 LA Ruby Conference 2010
+            %p
+              This is the second year for the LA Ruby Conference.  Come and join us to learn about ruby and related technologies and software development practices that might change the way you do your job.
+            %p
+              Registration for the conference is open.  The conference on Saturday is $199.00.  The training workshops on Friday are $60.00 each.
+            %p
+              %span.bold
+                February 19-20, 2010
+                %br
+                Holiday Inn
+                %br
+                Burbank, CA
+            %p
+              = link_to "Register Now!", "http://larubyconf.eventwax.com/la-ruby-conf-2010/register", :target => '_blank', :id => 'register-button'
+
+        #rightcol
+          =render :partial => "sponsors/display"
+
+        #midcol
+          -unless flash.empty?
+            %ul#flash
+              -flash.keys.each do |k|
+                %li{:class => k}
+                  =h flash[k]
+            -javascript_tag do
+              setTimeout("new Effect.Fade('flash');", 10000)
+          =yield
+        .clear
+      =render :partial => 'shared/footer'
+
+      =render :partial => 'shared/google_analytics'
+
+    #lightbox_outer
+      #lightbox_inner
+        #lightbox_content
+    #lightbox_overlay
+
+    =render :partial => 'feedback/tab'

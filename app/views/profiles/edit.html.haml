@@ -1,0 +1,7 @@
+.module
+  =render 'shared/corners'
+  .module-inner
+    .form-header
+      Edit Profile page for 
+      =@profile.user.username
+    =render :partial => 'form'

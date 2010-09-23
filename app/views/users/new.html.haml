@@ -1,0 +1,27 @@
+#new-user.module.single-column
+  .module-inner
+    %h1 Sign up
+    -form_for @user do |f|
+      .form-field.required
+        =f.label :username, "User Name"
+        =f.text_field :username
+
+      .form-field.required
+        =f.label :email, "Email"
+        =f.text_field :email
+
+      .form-field.required
+        =f.label :time_zone, "Time Zone"
+        =f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones
+
+      .form-field.required
+        =f.label :password, "Password"
+        =f.password_field :password
+
+      .form-field.required
+        =f.label :password_confirmation "Confirm Password"
+        =f.password_field :password_confirmation
+
+
+      %span.submit
+        =f.submit "Sign up", :class => "button"

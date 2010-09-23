@@ -1,0 +1,16 @@
+.comment{:id => "comment#{proposal_comment.id}"}
+  .image
+    =link_to image_tag(proposal_comment.left_by.profile.avatar.url(:tiny)), profile_path(proposal_comment.left_by.profile)
+  .data
+    .message
+      =RDiscount.new(proposal_comment.message).to_html
+    .submitted-by
+      Commented by:
+      =link_to proposal_comment.left_by.username, user_path(proposal_comment.left_by)
+      about
+      =time_ago_in_words(proposal_comment.created_at)
+      ago
+      -if proposal_comment.left_by == session.user
+        |
+        =link_to_remote 'Remove', :url => proposal_comment_path(proposal_comment.proposal, proposal_comment), :method => 'delete', :update => proposal_comment.proposal.id
+  .clear

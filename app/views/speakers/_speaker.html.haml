@@ -1,0 +1,18 @@
+%p
+  =image_tag(speaker.speaker_photo.url(:thumb)) unless speaker.photo.nil?
+%p
+  =speaker.profile.full_name
+  @
+  =speaker.profile.company_name
+  \/
+  =speaker.profile.title
+%p
+  =Haml::Engine.new(speaker.bio).render
+%p
+  %span
+    Presenting:
+  -speaker.presentations.each do |presentation|
+    =link_to presentation.title, presentation_path(presentation)
+    on
+    =presentation.presentation_date_time.strftime('%A, %B %e, %Y @ %I:%M %p')
+%hr

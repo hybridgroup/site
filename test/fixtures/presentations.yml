@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+slot-0:
+  place_holder: Registration
+  presentation_date_time: 2/20/2009 08:00:00
+
+slot-1:
+  place_holder: Kick off
+  presentation_date_time: 2/20/2009 09:00:00
+  room: Room #1

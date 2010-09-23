@@ -1,0 +1,43 @@
+.profile-card
+  .name
+    =profile.display_name
+    -if profile.speaker
+      =link_to "* SPEAKER *", speaker_path(profile.speaker)
+    .actions
+      -if profile.user == session.user
+        =link_to('Edit',edit_user_profile_path(profile.user, profile))
+        |
+        =link_to('Change Password', edit_user_path(profile.user))
+
+  .message
+    =display_profile_completeness profile
+  .photo
+    -if profile.avatar
+      =image_tag("#{profile.avatar.url(:medium)}")
+      .full-link
+        =link_to 'View Full Size', profile.avatar.url
+  .info
+    .company
+      =profile.company_name
+    .title
+      =profile.title
+    .location
+      =profile.location
+    .email
+      =link_to profile.user.email, "mailto://#{profile.user.email}"
+    .twitter
+      =twitter_link profile
+    .proposals
+      =link_to 'View Proposals', user_proposals_path(profile.user) if profile.user.proposals.count > 0
+
+  -if session.user == profile.user
+    .conference-details
+      .form-header
+        Conference Info (private)
+      .gender
+        =profile.gender
+      .meals
+        =profile.meal_preference
+      .t-shirt
+        =profile.tshirt_size
+  .clear

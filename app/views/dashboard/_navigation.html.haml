@@ -1,0 +1,13 @@
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %div{:style => 'float: right; font-size: .7em'}
+      Refreshed at
+      =Time.zone.now.strftime('%m/%d/%Y %I:%M %p')
+    %h1
+      Community - Dashboard
+.meta-nav
+  .menu
+    %ul
+      %li.first
+        =link_to_unless_current 'Summary', '/dashboard'

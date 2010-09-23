@@ -1,0 +1,7 @@
+%dt
+  .news-item-headline
+    =news_item.headline
+  .news-item-date
+    =news_item.display_date.strftime('%B %d, %Y')
+%dd
+  =Haml::Engine.new(news_item.body).render

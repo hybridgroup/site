@@ -1,0 +1,18 @@
+-form_for @proposal do |f|
+  .form-field.required
+    %label{:for => 'proposal_title'} Title
+    =f.text_field :title, :size => 60
+  .form-field.required
+    %label{:for => 'proposal_abstract'} Abstract
+    =f.text_area :abstract, :cols => 80, :rows => 10
+  .form-field
+    %label{:for => 'proposal_target_audience'} Target Audience
+    =f.text_field :target_audience
+    Beginner, Intermediate, Advanced
+  .form-field
+    %label{:for => 'proposal_code_weight'} Code Weight
+    =f.text_field :code_weight, :size => 5
+    Percentage of content directly related to code
+
+  =submit_tag "Save", :class => "button"
+  =link_to "Cancel", proposals_path, :class => "button"

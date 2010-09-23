@@ -1,0 +1,41 @@
+#admin.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h1 Administration
+=render :partial => 'admin/navigation'
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h2 Feedback
+    %form{:method => :get, :action => '/admin/feedbacks/search'}
+      Search:
+      %input{:name => 'q'}
+      %input{:type => 'submit', :value => "Search"}
+    %p
+      %i
+        Type :all to see ALL feedback,
+        or :reviewed? to just see feedback messages that have already been
+        reviewed.  (Default list is all un-reviewed feedback messages)
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %table.admin
+      %tr
+        %th
+          Title
+        %th
+          Body
+        %th
+          Name
+        %th
+          Email
+        %th
+          User
+        %th
+          Reviewed
+        %th
+          Created
+        %th
+          Action
+      =render :partial => 'feedback', :collection => @feedbacks
+    #feedbacks-pagintation= will_paginate @feedbacks, :params => {:controller => 'admin/feedbacks', :action => 'index' }, :class => 'not_ajax'

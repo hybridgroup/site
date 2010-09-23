@@ -1,0 +1,45 @@
+common: &default_settings
+  # ============================== LICENSE KEY ===============================
+  license_key: '6aedc2bf7fa68fc580525e129b55de49ec81ce1f' # Personal Key
+  # license_key: 'ea00ad00f5b45f846925bad996cc1d48e6837f1d'  # ATTI Key
+  app_name: LA Ruby Conf 2010
+  enabled: true
+  log_level: info
+  ssl: false
+  apdex_t: 0.5
+  capture_params: false
+  transaction_tracer:
+    enabled: true
+    transaction_threshold: apdex_f
+    record_sql: obfuscated
+    stack_trace_threshold: 0.500
+  error_collector:
+    enabled: true
+    capture_source: true
+
+# Application Environments
+# ------------------------------------------
+development:
+  <<: *default_settings
+  enabled: false
+  developer: true
+  app_name: LA Ruby Conf 2010 (development)
+
+test:
+  <<: *default_settings
+  enabled: false
+
+production:
+  <<: *default_settings
+  enabled: true
+  app_name: LA Ruby Conf 2010 (production)
+
+staging:
+  <<: *default_settings
+  enabled: true
+  app_name: LA Ruby Conf 2010 (staging)
+
+integration:
+  <<: *default_settings
+  enabled: true
+  app_name: LA Ruby Conf 2010 (integration)

@@ -1,0 +1,8 @@
+%h1 Speaker
+%p.speaker-name
+  =link_to @speaker.profile.full_name, profile_path(@speaker.profile)
+%p.bio
+  =Haml::Engine.new(@speaker.bio).render
+
+%p
+  =link_to "See all speakers", speakers_path

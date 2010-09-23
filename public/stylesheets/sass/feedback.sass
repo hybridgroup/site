@@ -1,0 +1,174 @@
+@import shared.sass
+
+/* LINK TO FEEDBACK WIDGET -----------------
+#feedback_link
+  :background url(/images/feedback/feedback.png) transparent no-repeat
+  :height 103px
+  :left 0
+  :overflow hidden
+  :position absolute
+  :top 75px
+  :text-indent -100px
+  :width 36px
+  :border none
+  :cursor pointer
+  :_position absolute
+  .ie6 &
+    / :background none /  COMMENTED OUT AS MAKES INVISIBLE UNDER IE6
+    :filter progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/feedback/feedback.png', sizingMethod='crop')
+  &:hover
+    :margin-left -5px
+
+/* FEEDBACK WIDGET BACKGROUND ---------------
+#feedback_screen
+  :background black
+  :opacity 0.45
+  :filter alpha(opacity = 45)
+  :width 100%
+  :top 0
+  :left 0
+  :height 1500px
+  :position absolute
+  :z-index 1
+
+/* FEEDBACK WIDGET -------------------------
+#feedback
+  #feedback_overlay
+    :width 100%
+    :height 100%
+    :position absolute
+    :top 0
+    :z-index 999999
+    :left 0
+  #feedback_container
+    :height 800px
+    :width 474px
+    :top 0
+    :position relative
+    :margin 0 auto
+    :padding 20px
+    :color #555
+    :text-align left
+  a#feedback_close
+    :position absolute
+    :height 28px
+    :width 28px
+    :right 6px
+    :top 9px
+    :display block
+    :text-indent -9999px
+    :background transparent url(/images/feedback/close.png) no-repeat
+    .ie6 &
+      :background transparent
+      :filter progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/feedback/close.png', sizingMethod='crop')
+  #feedback_form
+    :background = !secondary
+    :padding 20px
+    :border 1px solid
+      :color = !secondary_border
+    :overflow hidden
+    .ie6 &
+      :width 4740px
+    form
+      :padding 20px
+      :border 1px solid
+        :color = !secondary_border
+      :background = !background
+
+  /* TOP NAVIGATION
+  #feedback_type_section
+    :margin 0 0 10px 0
+    a
+      :font-size 1.5em
+      :font-color blue
+      :padding 5px 10px
+      :width 75px
+      :display block
+    ul
+      :background #f8fafb url(/images/border-bg-elements/friends-box-gradient.gif) top left repeat-x
+      :border 1px solid #ccc
+      :overflow hidden
+      :height 1%
+    li
+      :float left
+      :display inline
+      :text-align center
+      a.active
+        :color = !light_text
+      a:hover
+        :color #555
+      .ie6 &
+        :width 97px
+      &.idea
+        :border-right 1px solid #fff
+      &.question
+        :border-left 1px solid #ccc
+        :border-right 1px solid #fff
+      &.problem
+        :border-left 1px solid #ccc
+        :border-right 1px solid #fff
+      &.praise
+        :border-left 1px solid #ccc
+  .feedback_section, .feedback_row
+    :clear both
+    :margin-bottom 7px
+  div.feedback_row
+    :font-size 1.2em
+    :overflow hidden
+    & input
+      :display block
+    label
+      :color #555
+      :font-weight bold
+      :line-height 2
+    span.required
+      :color #f00
+      :line-height 2
+      :font-weight bold
+      :font-size 1.2em
+  textarea#feedback_description
+    :height 57px
+    :display block
+  .feedback_section
+    :font-size 1.2em
+    legend
+      :line-height 1.5
+      :font-weight bold
+      :color #555
+      :display block
+      :margin 0
+      :padding 0
+  input, textarea
+    :padding 3px 5px
+  fieldset ul
+    :clear both
+    li
+      :float left
+      :display inline
+      :width 110px
+      :margin-right 1em
+      :margin-bottom .2em
+  p.remember-me
+    :margin-bottom 10px
+  input, label
+    :vertical-align middle
+  span.submit
+    :display block
+    :width 125px
+    input
+      :border 0
+      :width 125px
+      :padding 5px
+
+#thanks
+  :padding 20px
+  :background = !background
+  h2
+    :margin-bottom .5em
+  span.submit
+    :display block
+    :width 125px
+    :margin-top 20px
+    button
+      :border 0
+      :width 125px

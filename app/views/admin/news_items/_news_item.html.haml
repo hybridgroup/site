@@ -1,0 +1,13 @@
+%tr
+  %td
+    =news_item.id
+  %td
+    =news_item.headline
+  %td
+    =news_item.user.username
+  %td
+    =news_item.display_date
+  %td
+    =news_item.expire_date
+  %td
+    =link_to 'Edit', edit_admin_news_item_path(news_item)

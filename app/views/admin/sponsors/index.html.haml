@@ -1,0 +1,43 @@
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h1 Administration
+=render :partial => 'admin/navigation'
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h2 Sponsors
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    =link_to 'Add Sponsor', new_admin_sponsor_path
+    %table.admin
+      %tr
+        %th
+          ID
+        %th
+          Company
+        %th
+          Level
+        %th
+          Logo
+        %th
+          Date
+        %th
+          Actions
+      -@sponsors.each do |sponsor|
+        %tr
+          %td
+            =sponsor.id
+          %td
+            =sponsor.company_name
+          %td
+            =sponsor.sponsor_level
+          %td
+            =image_tag(sponsor.logo.url) unless sponsor.logo.nil?
+          %td
+            =sponsor.sponsor_date.strftime('%m-%d-%Y') if sponsor.sponsor_date
+          %td
+            =link_to 'Edit', edit_admin_sponsor_path(sponsor)
+            |
+            =link_to 'Remove', admin_sponsor_path(sponsor), :method => 'delete'

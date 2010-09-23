@@ -1,0 +1,9 @@
+-if proposal.comments.size > 0
+  %span Comments:
+.comments
+  -if proposal.comments.size > 3 && !@all then
+    =link_to_remote "view all (#{proposal.comments.size}) comments", :url => {:controller => 'proposals', :action => 'view_comments', :id => proposal}, :update => {:success => proposal.id}
+    =render :partial => 'proposals/proposal_comment', :collection => proposal.comments.last(3)
+  -else
+    =render :partial => 'proposals/proposal_comment', :collection => proposal.comments
+  %div{:id => "new-comment-form-#{proposal.id}"}

@@ -1,0 +1,11 @@
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h1
+      Community - Members
+=render :partial => 'community_navigation'
+-unless session.user
+  =render :partial => 'not_a_member'
+-else
+  =render :partial => 'members'
+

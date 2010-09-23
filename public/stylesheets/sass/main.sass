@@ -1,0 +1,707 @@
+@import shared.sass
+
+/* Global Reset
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+  :margin 0
+  :padding 0
+
+table
+  :border-collapse collapse
+  :border-spacing 0
+
+fieldset,img
+  :border 0
+
+ol,ul
+  :list-style none
+  li
+    :display block
+
+caption,th
+  :text-align left
+
+h1,h2,h3,h4,h5,h6
+  :font-weight normal
+
+q:before,q:after
+  :content ''
+
+abbr,acronym
+  :border 0
+
+*.bold
+  :font-weight bold
+
+*.italic
+  :font-style italic
+
+*.float-left
+  :float left
+
+*.float-right
+  :float right
+
+*.clear
+  :clear both
+
+*.hidden
+  :display none
+  :line-height 0
+  :margin 0
+  :padding 0
+  :text-indent -3000em
+  :width 0
+  :height 0
+
+*.center
+  :text-align center
+
+*.right
+  :text-align right
+
+*.left
+  :text-align left
+
+/* LAYTOUT
+.module
+  +module
+
+.two-col
+  :width 49%
+  +module
+
+.three-col
+  :width 32%
+  +module
+
+.four-col
+  :width 23.5%
+  +module
+  :margin-right .5%
+  :margin-left .5%
+
+.free
+  :height auto
+
+.left
+  :float left
+  :margin-left 0
+
+.right
+  :float right
+  :margin-right 0
+
+.middle
+  :float left
+  :margin-left 9px
+
+.big_number
+  :font-size 10em
+  :text-align center
+  :margin-top .5em
+
+.big_date
+  :font-size 4em
+  :text-align center
+
+/* Structural Elements
+body
+  :background #fff url(/images/bg-tile.jpg) repeat-x top left
+  :text-align center
+  :font-family Arial, Helvetica, sans-serif
+  :font-size 62.5%
+  :color #555
+
+a
+  :color = !links
+  :font-weight bold
+  :text-decoration none
+  &:hover
+    :color #555
+
+div#container
+  :width 1200px
+  :margin 0 auto
+  :text-align center
+
+  div#header
+    :width 1200px
+    :background transparent url(/images/header.jpg) no-repeat top center
+    :height 250px
+    :text-align left
+    .former_h1
+      :text-indent -3000em
+    span.description
+      :float left
+      :position relative
+      :top 180px
+      :left 530px
+      :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+      :color #960b01
+      :font-size 1.2em
+    div#meta
+      :float right
+      text-align: right
+      :position relative
+      :right 120px
+      :font-size 1.2em
+      :color #FFFFFF
+      :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+      a
+        :color #fc3
+        :font-weight normal
+    div#top-announcement
+      :float right
+      :text-align right
+      :position relative
+      :top 60px
+      :right 100px
+      :font-size 2.2em
+      :color #fff
+      :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+
+  div#navbar
+    :width 1000px
+    :height 35px
+    :background transparent url(/images/navbar.jpg) no-repeat top center
+    :position relative
+    :top -17px
+    :padding 10px 0 0 0
+    :margin 0 auto
+    :text-align left
+    ul#suckerfish
+      :text-align center
+      li:first-child
+        :border-left 0
+      li
+        :display inline
+        :padding 0 15px
+        :font-size 1.2em
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        :border-left 1px solid #b8b8b8
+        :position relative
+        :margin 0 0 10px 0
+        &.last
+          :border-right 0
+        a
+          :color #555
+          &.daddy:after
+            :content "\ \BB"
+          &:hover
+            :color #960b01
+        &.active a
+          :color = !links
+        ul
+          :position absolute
+          :margin 0
+          :width 120px
+          :left -3000em
+          :background-color #e8e8e8
+          :text-align left
+          li
+            :border 0
+            :border-bottom 1px dashed #ddd
+            :padding 5px 15px
+            :text-align left
+            :display block
+            :margin 0
+            ul
+              :background-color #f4f4f4
+        &:hover ul ul, &.sfhover ul ul
+          :left -3000em
+        &:hover ul
+          :top 15px
+          :left 15px
+          :font-size .8em
+          :border 0
+        & li.sfhover, & li:hover ul, &.sfhover ul
+          :left 110px
+          :top 0px
+          :font-size .8em
+          :border 0
+
+
+  div#main
+    :width 1000px
+    :margin 0 auto
+    :text-align left
+
+    div#leftcol
+      :float left
+      :width 200px
+      :background-color #f4f4f4
+      :margin-right 20px
+      :min-height 600px
+      h2
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        :font-weight normal
+        :text-transform uppercase
+        :text-align center
+        :font-size 1.4em
+        :letter-spacing 3px
+        :padding 20px 0
+        :border-bottom 1px solid #fff
+        :color #4b4b4b
+      div#announcement
+        :padding 20px
+        :color #333
+        h3
+          :font-weight bold
+          :font-size 1.25em
+          :line-height 1.5em
+          :color #000
+          :margin-bottom 5px
+        p
+          :font-size 1.4em
+          :line-height 1.5em
+          :margin-bottom .8em
+      a#register-button
+        :font-size .9em
+        :color #fff
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        :background transparent url(/images/register-button-off.png) no-repeat top left
+        :text-align center
+        :display block
+        :width 162px
+        :padding 4px 0 8px 0
+        :margin-top 15px
+        &:hover
+          :background transparent url(/images/register-button-on.png) no-repeat top left
+    div#rightcol
+      :float right
+      :width 200px
+      :margin-left 20px
+      h2
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        :font-weight normal
+        :text-transform uppercase
+        :text-align center
+        :font-size 1.4em
+        :letter-spacing 3px
+        :border 1px solid #eee
+        :padding 20px 0
+        :margin-bottom 5px
+        :color #4b4b4b
+      a.sponsor
+        :display block
+        :text-align center
+        :border 1px solid #eee
+        :padding 5px 0
+      dl.sponsor
+        :text-align center
+        :font-size 1.2em
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        dt
+          :text-transform uppercase
+          :text-align center
+          :letter-spacing 2px
+          :margin 20px 0 5px
+          :color #4b4b4b
+        dd
+          :margin-bottom 15px
+          &.placement
+            a
+              :display block
+              :width 125px
+              :padding 10px
+              :margin 0 auto
+              :border 2px dashed #ccc
+              :color #999
+              :line-height 2em
+              :font-weight normal
+              &:hover
+                :color #666
+                :border 2px dashed #999
+
+    div#singlecol
+      :border black 1 px solid
+      :width 940px
+      :margin 0 auto
+      :font-size 1.4em
+      :line-height 1.5em
+      div.meta-nav
+        div.menu
+          ul
+            :margin-bottom 5px
+          li
+            :display inline
+            :padding 0 5px 0 8px
+            :border-left 1px solid
+            &.first
+              :border-left none
+      dt
+        :color #be1a02
+        :font-style italic
+      dd
+        :margin-bottom .5em
+      h1
+        :color #be1a02
+        :font-size 2.2em
+        :line-height 1.2em
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        :margin-bottom 10px
+
+      h2
+        :color #be1a02
+        :font-size 2.0em
+        :line-height 1.2em
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        :margin-bottom 10px
+      h3
+        :font-size 1.8em
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        :line-height 1.2em
+        :margin .8em 0 .4em 0
+      h4
+        :color #BE1A02
+        :font-style italic
+      textarea#content_text
+        :width 500px
+      ul
+        :margin-left 1em
+        :list-style-type disc
+        :list-style-position outside
+        li
+          :display list-item
+      p
+        :margin-top .5em
+      .dynamic-content dt
+        :font-size 1.3em
+
+    div#midcol
+      :border black 1 px solid
+      :width 560px
+      :margin 0 auto
+      :font-size 1.4em
+      :line-height 1.5em
+      dt
+        .news-item-headline
+          color: #be1a02
+          font-weight: bold
+          font-size: 1.8em
+          line-height: 1.2em
+          margin: 0 0 0.2em
+        .news-item-date
+          :font-size .75em
+          :color #c0c0c0
+          :margin-top 0px
+          :margin-bottom 0px
+      dd
+        :margin-bottom .8em
+      h1
+        :color #be1a02
+        :font-size 2.2em
+        :line-height 1.2em
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        :margin-bottom 10px
+      h2
+        font-size: 1.6em
+        font-family: 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        line-height: 1.8em
+        margin-top: .4em 0 .4em
+      h3
+        :font-size 1.4em
+        :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
+        :line-height 1.2em
+        :margin .8em 0 .4em 0
+      h4
+        :color #BE1A02
+        :font-style italic
+      textarea#content_text
+        :width 500px
+      ul
+        :margin-left 1em
+        :list-style-type disc
+        :list-style-position outside
+        li
+          :display list-item
+      p
+        :margin-bottom .8em
+      .dynamic-content dt
+        :font-size 1.3em
+
+      #schedule-table
+        :margin-top 1em
+        :width 80%
+        th
+          :padding-bottom 5px
+        .time
+          :text-align left
+
+  div#footer
+    :clear both
+    :margin-top 50px
+    ul
+      :margin-bottom 5px
+      li
+        :display inline
+        :padding 0 5px 0 8px
+        :border-left 1px solid
+        &.first
+          :border-left none
+
+.left-image
+  float: left
+  padding-right: 10px
+
+%p.venue-information
+  margin-left: 10px
+
+.profile-card
+  border: 1px solid #b8b8b8
+  float: left
+  .name
+    background-color: #bd2d15
+    color: #ffffff
+    padding: 4px
+    font-size: 1.1em
+    a
+      color: #ffcc33
+    .actions
+      float: right
+      font-size: .9em
+  .message
+    text-align: center
+  .photo
+    margin: 5px
+    float: left
+    width: 200px
+    text-align: center
+  .info
+    float: right
+    width: 288px
+    margin: 5px
+  .conference-details
+    float: right
+    margin: 5px
+    width: 288px
+
+.form-field
+  margin-bottom: 10px
+  overflow: hidden
+  label
+    clear: both
+    float: left
+    display: inline
+    width: 120px
+    margin-right: 10px
+    padding-top: 1px
+    text-align: right
+
+.form-header
+  background-color: #bd2d15
+  font-size: 1.1em
+  color: #ffffff
+  padding: 4px
+  margin-bottom: 5px
+  .actions
+    float: right
+    a
+      color: #ffcc33
+/**** TABLE STUFF ****/
+table.admin
+  width: 100%
+  th
+    text-align: center
+    :background = !header_background 
+    :color #fff
+  td.top
+    vertical-align: top
+
+table.schedule
+  width: 100%
+  th
+    text-align: center
+    background: #bdbdbd
+  td
+    vertical-align: top
+    padding: 2px
+    margin: 1px
+    background: #ebc980
+    color: #000
+    p.title
+      text-align: center
+      font-size: 1.5em
+      font-weight: bold
+    p.presenter
+      text-align: center
+  td.special
+    text-align: center
+    font-size: 1.5em
+    padding: 20px
+  td.nowrap
+    white-space: nowrap
+
+/* Proposal Status
+div#container
+  div#main
+    div#midcol
+      ul.proposal
+        list-style-type: none
+.proposal
+  .title
+    font-size: 1.4em
+    font-weight: bold
+    color: #be1a02
+  .liked
+    font-size: .7em
+    padding-left: 10px
+  .submitted-by
+    font-size: .7em
+    padding-left: 10px
+  .submitted-on
+    font-size: .7em
+    span
+      font-weight: bold
+  .status
+    font-size: .7em
+    span
+      font-weight: bold
+  .actions
+    text-align: center
+    font-size: .7em
+    margin-bottom: 10px
+
+/* Comments
+div#container
+  div#main
+    div#midcol
+      .comment
+        p
+          margin-bottom: 3px
+.comment
+  float: left
+  padding-bottom: 10px
+  .image
+    float: left
+    width: 50px
+  .data
+    float: right
+    padding-left: 5px
+    width: 450px
+    .message
+
+/* DASHBOARD NAVIGATION STATS --------------------------------
+.meta-nav
+  .menu
+    :margin-bottom 5px
+    ul
+      :list-style none
+      li
+        :overflow hidden
+        :display inline
+        :vertical-align bottom
+        :padding-left 5px
+        :padding-right 3px
+        :border-left 1px black solid
+      li.first
+        :border-left 0px
+      li.menu
+        display: inline
+
+/* COMMUNITY -------------------------------------------------
+/* Members
+ul.members
+  li
+    list-style: none
+    .member
+      padding: 2px
+      height: 80px
+      .image
+        float: left
+        margin-right: 5px
+        width: 80px
+      .action
+        float: right
+
+/* Activity
+ul.activities
+  li
+    list-style: none
+    .activity
+      padding: 2px
+      height: 50px
+    .image
+      float: left
+      margin-right: 5px
+      width: 50px
+    .message
+      float: left
+      width: 350px
+    .when
+      float: right
+      widht: 100px
+      font-size: .8em
+      font-style: italics
+
+// LIGHTBOX STYLING --------------------------------------
+#lightbox_overlay
+  :display none
+  :position absolute
+  :top 0
+  :left 0
+  :width 100%
+  :min-height 1000px
+  :height 100%
+  :background-color black
+  :z-index 1000
+  :opacity 0.60
+  :filter alpha(opacity=60)
+#lightbox_outer
+  :display none
+  :height 100%
+  :width 100%
+  :position absolute
+  :top 0
+  :left 0
+  :z-index 999999
+  #lightbox_inner
+    :position relative
+    :top 20px
+    :width 600px
+    :margin 0 auto
+    :background-color = !secondary
+    :border 1px solid
+      :color = !secondary_border
+    :padding 20px
+    :text-align center
+    .ie6 &
+      :width 640px
+  #lightbox_content
+    :background = !background
+    :overflow auto
+    :padding 20px
+    :text-align left
+    :border 1px solid
+      :color = !secondary_border
+  a.close-lightbox
+    :display block
+    :font-size 1.2em
+    :color = !links
+    :padding 10px
+    :background = !background
+    :border 1px solid
+      :color = !secondary_border
+    :margin 20px auto 0
+    :width 100px
+    &:hover
+      :text-decoration none
+
+.required
+  color: #FF0000
+
+.comment_row
+  textarea
+    padding-left: 10px
+  input
+    padding-left: 10px
+
+.fixed-height
+  height: 200px
+
+.comments
+  margin-left: 20px
+  float: left
+  border-bottom: 1px solid 
+  :border-bottom-color = !primary_border
+  margin-bottom: 10px

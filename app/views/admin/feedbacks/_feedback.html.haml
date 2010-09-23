@@ -1,0 +1,27 @@
+%tr
+  %td.top
+    =link_to feedback.title, admin_feedback_path(feedback)
+  %td.top
+    =RDiscount.new(feedback.body).to_html
+  %td.top
+    =feedback.name
+  %td.top
+    =feedback.email
+  %td.top
+    -if feedback.user
+      =link_to feedback.user.username, user_path(feedback.user)
+      %br
+      =feedback.user.profile.location unless feedback.user.profile.nil?
+    -else
+      Not logged in
+  %td.top
+    -if feedback.reviewed?
+      =feedback.reviewed_by.username
+      %br
+      =time_ago_in_words(feedback.reviewed_at)
+      ago
+  %td.top
+    =time_ago_in_words(feedback.created_at)
+    ago
+  %td.top
+    =link_to 'Review', review_admin_feedback_path(feedback) unless feedback.reviewed?

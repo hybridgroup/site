@@ -1,0 +1,27 @@
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h1 Administration
+=render :partial => 'admin/navigation'
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h2 Presentations (Conference Only)
+
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    =link_to 'Add Presenation', new_admin_presentation_path
+    %table.admin
+      %tr
+        %th
+          id
+        %th
+          Time
+        %th
+          Title
+        %th
+          Presenter(s)
+        %th
+          Actions
+      =render :partial => 'presentation', :collection => @presentations

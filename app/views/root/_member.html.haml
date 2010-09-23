@@ -1,0 +1,5 @@
+%li{:id => member.id}
+  -if member.profile
+    =render :partial => 'member_with_profile', :locals => {:user => member}
+  -else
+    =render :partial => 'member_with_out_profile', :locals => {:user => member}

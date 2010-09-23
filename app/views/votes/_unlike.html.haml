@@ -1,0 +1,4 @@
+-unless proposal.liked_by?(session.user)
+  =link_to_remote 'Like', :url => proposal_votes_path(proposal), :method => :post, :update => "like-#{proposal.id}"
+-else
+  =link_to_remote 'un-Like', :url => proposal_vote_path(proposal, users_vote(proposal, session.user)), :method => :delete, :update => "like-#{proposal.id}"

@@ -1,0 +1,11 @@
+%tr
+  %td
+    =presentation.id
+  %td
+    =presentation.presentation_date_time
+  %td
+    =presentation.title
+  %td
+    =display_speakers(presentation)
+  %td
+    =link_to 'Edit', edit_admin_presentation_path(presentation)

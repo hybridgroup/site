@@ -1,0 +1,11 @@
+%li
+  .activity
+    .image
+      -if activity.user.profile && activity.user.profile.avatar then
+        =image_tag(activity.user.profile.avatar.url(:tiny))
+    .message
+      =link_to activity.user.username, user_path(activity.user)
+      =activity.message
+    .when
+      =time_ago_in_words(activity.created_at)
+      ago

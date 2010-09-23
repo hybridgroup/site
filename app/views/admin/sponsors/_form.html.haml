@@ -1,0 +1,27 @@
+-form_for [:admin, @sponsor], :html => { :multipart => true } do |f|
+  .form-field.required
+    %label{:for => 'sponsor_company_name'}
+      Company Name:
+    =f.text_field :company_name
+
+  .form-field.required
+    %label{:for => 'sponsor_level'}
+      Level:
+    =f.select :sponsor_level, Sponsor::SPONSOR_LEVELS
+
+  .form-field.required
+    %label{:for => 'sponsor_url'}
+      URL:
+    =f.text_field :url
+
+  .form-field
+    %label{:for => 'sponsor_logo'}
+      Logo: 
+    =f.file_field :logo
+    %br
+    =image_tag(@sponsor.logo.url)
+  .form-field
+    %label{:for => 'sponsor_blurb'}
+      Blurb:
+    =f.text_area :blurb, :size => '60x5'
+  =submit_tag "Save"

@@ -1,0 +1,15 @@
+.member
+  .image
+    =link_to image_tag(user.profile.avatar.url(:icon)), profile_path(user.profile)
+  .action
+    / Add Friend
+  .name
+    =link_to user.profile.display_name, profile_path(user.profile)
+  .email
+    =link_to user.email, "mailto://#{user.email}"
+  .member-since
+    Member since:
+    =user.created_at.strftime("%D")
+  .last-login
+    Last login:
+    =user.last_login_date.strftime("%D") unless user.last_login_date.nil?

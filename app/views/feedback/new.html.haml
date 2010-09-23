@@ -1,0 +1,34 @@
+- form_remote_for :feedback, :url => feedbacks_path, :update => :feedback do |f|
+  #feedback_body_section
+    = f.error_messages
+
+    .feedback_row.feedback_section
+      = f.label :title, "Give a short summary"
+      = f.text_field :title
+    .feedback_row
+      = f.label :body, feedback_prompt(@feedback)
+      %span{:class => "required"}
+        *
+      = f.text_area :body, :cols => 40, :rows => 10
+
+  #feedback_submitter_section
+    .feedback_row
+      = f.label :email, "What is your email address?"
+      %span{:class => "required"}
+        *
+      = f.text_field :email, :value => session.anonymous? ? '' : session.user.email
+
+    .feedback_row
+      = f.label :name, "Tell us your name"
+      = f.text_field :name, :value => session.anonymous? ? '' : (session.user.profile.nil? ? session.user.username : session.user.profile.full_name)
+
+    %p.remember-me{:style => 'display:none'}
+      = check_box_tag 'feedback[remember_me]', '1', @remember_me
+      = f.label :remember_me, 'Remember me for future feedback'
+
+    %span.submit
+      = f.submit 'Post Feedback', :class => 'button'
+
+- unless from_internet_explorer?(request)
+  %script{:type => "text/javascript"}
+    $("feedback_screen").setStyle("height: " + document.height + "px");

@@ -1,0 +1,16 @@
+-if @user == session.user && !session.user.nil?
+  %h1 Your proposals
+-elsif @user
+  %h1
+    =@user.username
+    \'s proposals
+-else
+  .module
+    =render :partial => 'shared/corners'
+    .module-inner
+      %h1 Community - Proposals
+  =render :partial => 'root/community_navigation'
+  .form-header
+    &nbsp;
+%ul.proposal
+  =render :partial => 'proposal', :collection => @proposals

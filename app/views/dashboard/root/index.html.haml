@@ -1,0 +1,62 @@
+-content_for :head do
+  %meta{'http-equiv' => 'refresh', :content => 300}
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h1
+      Community - Dashboard
+=render :partial => 'root/community_navigation'
+
+.three-col.left.fixed-height
+  =render :partial => 'shared/corners'
+  .module-inner
+    .module-header Total Users
+    =big_number(@users)
+.three-col.middle.fixed-height
+  =render :partial => 'shared/corners'
+  .module-inner
+    .module-header Proposals Submitted
+    =big_number(@proposals)
+.three-col.right.fixed-height
+  =render :partial => 'shared/corners'
+  .module-inner
+    .module-header Votes cast
+    =big_number(@votes)
+.two-col.left
+  =render :partial => 'shared/corners'
+  .module-inner
+    .module-header Proposals by Votes
+    %table.admin
+      %tr
+        %th
+          Rank
+        %th
+          Title
+        %th
+          Votes
+      -@popular_proposals.each_with_index do |pro, i|
+        %tr
+          %td.right
+            ="#{i+1}. "
+          %td
+            =pro[0]
+          %td.center
+            =pro[1]
+.two-col.right
+  =render :partial => 'shared/corners'
+  .module-inner
+    .module-header Recent Users
+    %table.admin
+      %tr
+        %th
+          User
+        %th
+          Last seen
+      -@recent_users.each do |user|
+        %tr
+          %td
+            =link_to user.username, user_path(user)
+          %td.right
+            =time_ago_in_words(user.last_login_date)
+            ago
+            

@@ -1,0 +1,57 @@
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h1 Administration
+=render :partial => 'admin/navigation'
+#admin-feedback.module
+  =render :partial => 'shared/corners'
+  .module-inner
+  
+    #left-col
+      .feedback
+        %h3 Feedback
+        %dl
+          %dt Title
+          %dd=@feedback.title
+          %dt Body
+          %dd=RDiscount.new(@feedback.body).to_html
+          %dt Created At
+          %dd=@feedback.created_at
+      .page-info
+        %h3 Page Information
+        %dl
+          %dt URL
+          %dd=@feedback.url
+          %dt Referrer
+          %dd=@feedback.referer
+      .browser-info
+        %h3 Browser Information
+        %dl
+          %dt User Agent
+          %dd=@feedback.user_agent
+          %dt Remote IP
+          %dd=@feedback.remote_ip
+          %dt Cookies
+          %dd=@feedback.cookies
+          %dt Domain
+          %dd=@feedback.domain
+          
+    #right-col
+      .user-info
+        %h3 User Information
+        %dl
+          -if @feedback.user
+            %dt User
+            %dd=@feedback.user.profile.nil? ? @feedback.user.username : @feedback.user.profile.display_name
+            %dt Location
+            %dd=@feedback.user.profile.location unless @feedback.user.profile.nil?
+            %dt User Email
+            %dd=@feedback.user.email
+          %dt Email left on Feedback
+          %dd=@feedback.email
+          %dt Name left on Feedback
+          %dd=@feedback.name
+
+      .actions
+        %h3 Actions
+        %p.review=link_to 'Review', review_admin_feedback_path(@feedback) unless @feedback.reviewed?

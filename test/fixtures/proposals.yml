@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+default:
+  title: MyString
+  abstract: MyText
+  date_submitted: 2009-12-12 15:57:56
+  reviewed: false
+  date_reviewed: 2009-12-12 15:57:56
+  reviewed_by_user_id: 1
+  status: Pending
+  user_id: 1
+
+two:
+  title: MyString
+  abstract: MyText
+  date_submitted: 2009-12-12 15:57:56
+  reviewed: false
+  date_reviewed: 2009-12-12 15:57:56
+  reviewed_by_user_id: 1
+  status: Pending
+  user_id: 1

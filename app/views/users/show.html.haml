@@ -1,0 +1,9 @@
+-if @user.profile
+  =render :partial => 'profiles/profile_card', :locals => {:profile => @user.profile}
+-else
+  -if @user == session.user
+    You have not created your profile.
+    =link_to 'Create Profile', new_user_profile_path(@user)
+  -else
+    =@user.username
+    has not created a public profile at this.

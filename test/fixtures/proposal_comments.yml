@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  proposal_id: 1
+  left_by_user_id: 1
+  message: MyString
+
+two:
+  proposal_id: 1
+  left_by_user_id: 1
+  message: MyString
