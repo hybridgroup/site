@@ -18,23 +18,7 @@
       =render :partial => 'shared/header'
       #main
         #leftcol
-          %h2 Announcement
-          #announcement
-            %h3 LA Ruby Conference 2010
-            %p
-              This is the second year for the LA Ruby Conference.  Come and join us to learn about ruby and related technologies and software development practices that might change the way you do your job.
-            %p
-              Registration for the conference is open.  The conference on Saturday is $199.00.  The training workshops on Friday are $60.00 each.
-            %p
-              %span.bold
-                February 19-20, 2010
-                %br
-                Holiday Inn
-                %br
-                Burbank, CA
-            %p
-              = link_to "Register Now!", "http://larubyconf.eventwax.com/la-ruby-conf-2010/register", :target => '_blank', :id => 'register-button'
-
+          =render :partial => 'shared/announcement'
         #rightcol
           =render :partial => "sponsors/display"
 

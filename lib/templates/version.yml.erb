@@ -5,5 +5,5 @@
 
 major:        2
 minor:        1
-build:      <%= YAML.parse(`svn info`)['Revision'].value %>
+build:      <%= `git rev-list HEAD|wc -l`.strip %>
 build_date: <%= Date.today.to_s %>

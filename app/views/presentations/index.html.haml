@@ -1,63 +1,9 @@
 %h1
   Schedule
 
-.day-1
-  .form-header
-    Training - Friday, February 19th, 2010
-    %table.schedule
-      %tr
-        %th.nowrap
-          Time
-        %th
-          Room 1
-        %th
-          Room 2
-        %th
-          Room 3
-      %tr
-        %td.nowrap.top
-          9:00 AM - 12:30 PM
-        %td.top
-          %p.title
-            =link_to 'Ruby Koans (Intro to Ruby)', presentation_path(@r1m)
-          %p.presenter
-            =display_speakers @r1m
-        %td
-          %p.title
-            =link_to 'Pew Pew: Writing Games with Ruby', presentation_path(@r2m)
-          %p.presenter
-            =display_speakers @r2m
-        %td
-          %p.title
-            =link_to @r3m.title, presentation_path(@r3m)
-          %p.presenter
-            =display_speakers @r3m
-      %tr
-        %td.nowrap
-          12:30 PM - 2:00 PM
-        %td.special{:colspan => 3}
-          Lunch (on your own)
-      %tr
-        %td.nowrap
-          2:00 PM - 5:30 PM
-        %td
-          %p.title
-            =link_to @r1a.title, presentation_path(@r1a)
-          %p.presenter
-            =display_speakers @r1a
-        %td
-          %p.title
-            =link_to @r2a.title, presentation_path(@r2a)
-          %p.presenter
-            =display_speakers @r2a
-        %td
-          %p.title
-            =link_to @r3a.title, presentation_path(@r3a)
-          %p.presenter
-            =display_speakers @r3a
 .day-2
   .form-header
-    Conference - Saturday, February 20th, 2010
+    Conference - Saturday, February 5th, 2010
     %table.schedule
       %tr
         %th
