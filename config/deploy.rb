@@ -2,7 +2,7 @@ fail_message = "\nInvalid deploy_env specified\n\tUsage: cap {command} -S deploy
 
 begin ; deploy_env; rescue NameError; set :deploy_env, 'integration' end
 
-set :user, 'laruby'
+set :user, 'laprod'
 set :domain, 'larubyconf.com'
 set :project, 'larc2010'
 
@@ -12,6 +12,8 @@ set :scm_username, 'deploy'
 set :scm_password, 'larubyconf'
 set :repository, "git@github.com:larubyconf/site"
 set :branch, "master"
+
+set :deploy_via, :copy
 
 set :application, "2010.larubyconf.com"
 

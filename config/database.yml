@@ -17,7 +17,7 @@ test:
 
 production:
   adapter: mysql
-  database: larc2010
+  database: larc2011
   username: laruby
   password: l4ruby
   host: mysql-2010.larubyconf.com
