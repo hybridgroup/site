@@ -16,21 +16,23 @@
               =link_to 'Administration', admin_path
             %li
               =link_to "Logout", session_path, :method => :delete
-    #top-announcement
-      -if Date.today < Date.parse('2011-02-03')
-        LA Ruby Conference 2011 is only
-        =distance_of_time_in_words(Date.today,Date.parse('2011-02-03')) 
-        away
-      -else
-        LA Ruby Conference 2011 was
-        =distance_of_time_in_words(Date.today,Date.parse('2011-02-03')) 
-        ago
+  #top-announcement
+    -if Date.today < Date.parse('2011-02-03')
+      LA Ruby Conference 2011 is only
+      =distance_of_time_in_words(Date.today,Date.parse('2011-02-03')) 
+      away!
+    -else
+      LA Ruby Conference 2011 was
+      =distance_of_time_in_words(Date.today,Date.parse('2011-02-03')) 
+      ago.
 #navbar
   %ul#suckerfish
     %li
       =link_to_unless_current 'Home', root_path
     %li
-      =link_to_unless_current 'Community', community_path
+      =link_to_unless_current 'Proposals', proposals_path
+    %li
+      =link_to_unless_current 'Community', dash_path
     %li
       =link_to_unless_current 'Venue', venue_path
     %li

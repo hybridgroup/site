@@ -13,48 +13,7 @@
 
   %body
     #container
-      #header
-        .former_h1
-          LA Ruby Conf
-        %span.description
-          Los Angeles Ruby Conference 2010
-        #meta
-          %ul
-            %li.first
-              -unless session.authenticated?
-                =link_to 'Login', new_session_path
-              -else
-                Welcome back,
-                =session.user.username
-                %li
-                  =link_to 'My Profile', user_path(session.user)
-                -if session.user.admin?
-                  %li
-                    =link_to 'Administration', admin_path
-                %li
-                  =link_to "Logout", session_path, :method => :delete
-        #top-announcement
-          LA Ruby Conference 2010 is in the planning stages
-
-      #navbar
-        %ul#suckerfish
-          %li
-            =link_to_unless_current 'Home', root_path
-          %li
-            =link_to_unless_current 'Community', community_path
-          %li
-            =link_to_unless_current 'Venue', venue_path
-          %li
-            =link_to_unless_current 'Speakers', speakers_path
-          %li
-            =link_to_unless_current 'Schedule', presentations_path
-          %li
-            =link_to_unless_current 'Sponsors', sponsors_path
-          %li
-            =link_to_unless_current "Last Year", 'http://2009.larubyconf.com'
-          %li
-            =link_to_unless_current 'Contact Us', contact_us_path
-
+      =render :partial => 'shared/header'
       #main
         #singlecol
           -unless flash.empty?

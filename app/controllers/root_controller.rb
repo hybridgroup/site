@@ -7,13 +7,17 @@ class RootController < ApplicationController
   end
 
   def community
-    unless session.user 
+    unless session.user
       redirect_to proposals_path()
     else
       require_user
 
       if session.user
-        @activities = Activity.find(:all, :order => 'updated_at desc')
+        @activities = Activity.find(:all,
+                                    :order => 'updated_at desc',
+                                    :conditions => ['created_at > ?',
+                                                    Time.now - 86400]
+                                    )
       end
     end
   end

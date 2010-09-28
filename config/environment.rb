@@ -23,6 +23,9 @@ Rails::Initializer.run do |config|
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options   = { :host => 'localhost' }
+
+  RFP_START = Date.parse("9/27/2010")
+  RFP_END = Date.parse("12/13/2010")
 end
 
 require 'will_paginate'

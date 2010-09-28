@@ -1,31 +1,26 @@
 -content_for :head do
   %meta{'http-equiv' => 'refresh', :content => 300}
 .module
-  =render :partial => 'shared/corners'
   .module-inner
     %h1
       Community - Dashboard
 =render :partial => 'root/community_navigation'
 
 .three-col.left.fixed-height
-  =render :partial => 'shared/corners'
   .module-inner
     .module-header Total Users
     =big_number(@users)
 .three-col.middle.fixed-height
-  =render :partial => 'shared/corners'
   .module-inner
     .module-header Proposals Submitted
     =big_number(@proposals)
 .three-col.right.fixed-height
-  =render :partial => 'shared/corners'
   .module-inner
-    .module-header Votes cast
+    .module-header Likes cast
     =big_number(@votes)
 .two-col.left
-  =render :partial => 'shared/corners'
   .module-inner
-    .module-header Proposals by Votes
+    .module-header Proposals by Like
     %table.admin
       %tr
         %th
@@ -33,7 +28,7 @@
         %th
           Title
         %th
-          Votes
+          Like
       -@popular_proposals.each_with_index do |pro, i|
         %tr
           %td.right
@@ -43,7 +38,6 @@
           %td.center
             =pro[1]
 .two-col.right
-  =render :partial => 'shared/corners'
   .module-inner
     .module-header Recent Users
     %table.admin

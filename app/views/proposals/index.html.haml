@@ -1,16 +1,11 @@
--if @user == session.user && !session.user.nil?
-  %h1 Your proposals
--elsif @user
-  %h1
-    =@user.username
-    \'s proposals
--else
-  .module
-    =render :partial => 'shared/corners'
-    .module-inner
-      %h1 Community - Proposals
-  =render :partial => 'root/community_navigation'
-  .form-header
-    &nbsp;
+.module
+  .module-inner
+    %h1 Proposals
+    -if params[:user_id]
+      %h3 
+        for 
+        =User.find(params[:user_id]).username
+.right
+  =link_to "Submit a Proposal", new_user_proposal_path(session.user)
 %ul.proposal
   =render :partial => 'proposal', :collection => @proposals

@@ -1,9 +1,9 @@
 .module
-  =render :partial => 'shared/corners'
   .module-inner
     %h1 Community - Activity
 =render :partial => 'community_navigation'
 -unless session.user
   =render :partial => 'not_a_member'
 -else
+  Activity on the site within the last 24 hours
   =render :partial => 'activities'

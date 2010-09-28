@@ -31,4 +31,10 @@ module ApplicationHelper
     "#{a} #{b}</p>"
   end
 
+  def google_search_link value
+    link_to value,  
+            "http://google.com/search?q=#{value.gsub(' ','+').downcase}",
+            :target => "_blank"
+  end
+
 end

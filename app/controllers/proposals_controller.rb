@@ -46,8 +46,9 @@ class ProposalsController < ApplicationController
       @proposals = @user.proposals
     else
       @proposals = Proposal.find(:all, :order => 'created_at',
-                                 :conditions => ['created_at < ? ',
-                                                 '2010-01-13'])
+                         :conditions => ['created_at > ? and created_at < ?',
+                                         RFP_START,
+                                         RFP_END])
       @user = nil
     end
   end

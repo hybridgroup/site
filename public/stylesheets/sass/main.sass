@@ -120,17 +120,15 @@ a
     :color #555
 
 div#container
-  :width 1200px
+  :width 1000px
   :margin 0 auto
   :text-align center
 
   div#header
-    :width 1200px
+    :width 1000px
     :background transparent url(/images/la-ruby-conf-2011-header.png) no-repeat top center
     :height 290px
     :text-align left
-    .former_h1
-      :text-indent -3000em
     span.description
       :float left
       :position relative
@@ -140,19 +138,19 @@ div#container
       :color #960b01
       :font-size 1.2em
     div#meta
-      :float left
-      :text-align left
-      :position relative
-      :right 120px
+      :float right
+      :text-align right
+      :margin-right 20px
+      :margin-top 5px
       :font-size 1.2em
       :color #FFFFFF
       :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
       a
-        :color #fc3
         :font-weight normal
-    div#top-announcement
+    #top-announcement
       :float left
-      :margin-left 250px
+      :margin-top 25px
+      :margin-left 25px
       :text-align left
       :top 60px
       :font-size 2.2em
@@ -160,7 +158,7 @@ div#container
       :font-family 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif
 
   div#navbar
-    :width 1000px
+    :width 900px
     :height 35px
     :background transparent url(/images/navbar.png) no-repeat top center
     :position relative
@@ -490,7 +488,7 @@ p.venue-information
 .form-header
   :background-color = !header_background
   font-size: 1.1em
-  color: #000
+  :color  = !header_background_text
   padding: 4px
   margin-bottom: 5px
   .actions
@@ -503,7 +501,7 @@ table.admin
   th
     text-align: center
     :background = !header_background 
-    :color #fff
+    :color = !header_background_text
   td.top
     vertical-align: top
 
