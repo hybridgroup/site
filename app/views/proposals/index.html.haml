@@ -6,6 +6,10 @@
         for 
         =User.find(params[:user_id]).username
 .right
-  =link_to "Submit a Proposal", new_user_proposal_path(session.user)
+  -if session.user
+    =link_to "Submit a Proposal", new_user_proposal_path(session.user)
+  -else
+    %em
+      You must sign up and login to submit a proposal.
 %ul.proposal
   =render :partial => 'proposal', :collection => @proposals
