@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @user = session.user
 
     if @user.profile
-      redirect_to community_path()
+      redirect_to dash_path()
     else
       render :action => 'show'
     end
