@@ -7,4 +7,4 @@
     %p.company-name
       =link_to sponsor.company_name, sponsor_path(sponsor)
   %p.blurb
-    =sponsor.blurb
+    =Haml::Engine.new(sponsor.blurb).render
