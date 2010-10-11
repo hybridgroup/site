@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.contact_us  '/contact-us', :controller => "root", :action => "contact_us"
   map.venue       '/venue',      :controller => "root", :action => "venue"
   map.home        '/home',       :controller => 'users', :action => 'current'
+  map.last_year   'last-year',   :controller => 'root', :action => 'last_year'
 
   map.resource :session, :member => { :reset => [:get, :post] }
 
