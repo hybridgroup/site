@@ -25,6 +25,15 @@
       LA Ruby Conference 2011 was
       =distance_of_time_in_words(Date.today,Date.parse('2011-02-03')) 
       ago.
+    #sub-top-announcement
+      -if Date.today < Date.parse('2010-12-14')
+        You 
+        -remaining = (Date.parse("2010-12-13") - Date.today).to_i
+        -if remaining < 30 
+          only
+        have 
+        =remaining
+        days left to submit your proposal.
 #navbar
   %ul#suckerfish
     %li
