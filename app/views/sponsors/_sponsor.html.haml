@@ -2,7 +2,10 @@
 .sponsor
   -unless sponsor.logo.nil?
     %p.sponsor_logo
-      =link_to image_tag("#{sponsor.logo.url}"), sponsor.url, {:target => "_blank"}
+      =link_to image_tag("#{sponsor.logo.url}"), sponsor_path(sponsor)
+      %br
+      %strong
+        =sponsor.company_name
   -else 
     %p.company-name
       =link_to sponsor.company_name, sponsor_path(sponsor)

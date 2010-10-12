@@ -1,12 +1,12 @@
 %h2 
   =link_to 'Sponsors', sponsors_path
 %dl.sponsor
-  - prev_title = ""
-  =@sponsors.each do |sponsor|
-    -unless prev_title == sponsor.sponsorship_title
-      %dt 
+  -prev_level = ""
+  -@sponsors.each do |sponsor|
+    -unless prev_level == sponsor.sponsorship_title
+      %dt
         =sponsor.sponsorship_title
         -prev_title = sponsor.sponsorship_title
         Sponsors
     %dd
-      =link_to image_tag(sponsor.logo.url), sponsor_path(sponsor.id)
+      =link_to image_tag(sponsor.logo.url), sponsor_path(sponsor)

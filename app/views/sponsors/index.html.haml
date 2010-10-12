@@ -1,5 +1,9 @@
 %h1 Sponsors
 %p
+  The following companies have helped make the Los Angeles Ruby Conference possible once again!
+=render :partial => 'sponsor', :collection => @sponsors
+%hr
+%p
   Please see the 
   =link_to 'Sponsorship Prospectus', 'media/la-ruby-conf-2011-sponsorship-prospectus.pdf', :target => "_blank"
   for full details.
@@ -7,4 +11,3 @@
   If you have questions please contact
   =link_to 'staff@larubyconf.com', 'mailto://staff@larubyconf.com'
   or call JR Fent at (775) 544-1112.
-  =render :partial => 'sponsor', :collection => @sponsors

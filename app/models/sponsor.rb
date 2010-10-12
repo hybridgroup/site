@@ -26,7 +26,7 @@ class Sponsor < ActiveRecord::Base
   before_create :set_sponsor_date
 
   def to_param
-    "#{id}-#{company_name}"
+    "#{id}-#{company_name.parameterize}"
   end
 
 
