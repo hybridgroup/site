@@ -25,6 +25,10 @@ class Sponsor < ActiveRecord::Base
 
   before_create :set_sponsor_date
 
+  def to_param
+    "#{id}-#{company_name}"
+  end
+
 
   def sponsorship_title
     case sponsor_level.to_i
