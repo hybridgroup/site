@@ -8,6 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   map.home        '/home',       :controller => 'users', :action => 'current'
   map.last_year   'last-year',   :controller => 'root', :action => 'last_year'
 
+  map.badges "/badges", :controller => 'root', :action => 'badges'
+
   map.resource :session, :member => { :reset => [:get, :post] }
 
   map.resources :users do |user|
