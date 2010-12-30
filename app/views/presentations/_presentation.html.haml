@@ -2,6 +2,7 @@
   %td.nowrap
     =presentation.presentation_date_time.strftime("%I:%M %p")
   %td
-    =link_to presentation.title, presentation_path(presentation)
-    %br
-    =display_speakers presentation
+    .schedule-title
+      =link_to presentation.title, presentation_path(presentation)
+    .schedule-speakers
+      =display_speakers presentation
