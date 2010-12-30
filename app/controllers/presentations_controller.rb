@@ -1,9 +1,7 @@
 class PresentationsController < ApplicationController
   def index
-    @conference = Presentation.find(:all, 
-                                    :conditions => [
-                                    'presentation_date_time >= ?' ,
-                                                    '2010-02-20']
+    @conference = Presentation.find(:all,
+                                    :order => 'presentation_date_time'
                                     )
     @r1m = Presentation.find_by_place_holder("r1m")
     @r1a = Presentation.find_by_place_holder("r1a")
