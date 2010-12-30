@@ -490,8 +490,7 @@ ul.venue-information
     text-align: right
 
 .form-header
-  :background-color = !header_background
-  font-size: 1.1em
+  font-size: 1.5em
   :color  = !header_background_text
   padding: 4px
   margin-bottom: 5px
@@ -504,28 +503,29 @@ table.admin
   width: 100%
   th
     text-align: center
-    :background = !header_background 
+    :background = !header_background
     :color = !header_background_text
   td.top
     vertical-align: top
-
+tr:nth-child(odd)
+  background-color: #f1f1f1
+tr:nth-child(even)
+  background-color: #fff
 table.schedule
   width: 100%
-  th
-    text-align: center
-    background: #bdbdbd
-  td
-    vertical-align: top
-    padding: 2px
-    margin: 1px
-    background: #ebc980
-    color: #000
-    p.title
+  tbody
+    font-size: .8em
+    th
       text-align: center
-      font-size: 1.5em
-      font-weight: bold
-    p.presenter
-      text-align: center
+      padding-top: 5px
+      padding-bottom: 5px
+      background-color: #cecece
+    td
+      vertical-align: top
+      padding: 5px
+      margin: 1px
+      color: #000
+      font-size: .9em
   td.special
     text-align: center
     font-size: 1.5em
