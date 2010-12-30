@@ -1,7 +1,7 @@
 %p
   =image_tag(speaker.speaker_photo.url(:thumb)) unless speaker.photo.nil?
 %p
-  =speaker.profile.full_name
+  =link_to speaker.profile.full_name, profile_path(speaker.profile)
   @
   =speaker.profile.company_name
   \/
