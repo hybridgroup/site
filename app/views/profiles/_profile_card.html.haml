@@ -41,3 +41,5 @@
       .t-shirt
         =profile.tshirt_size
   .clear
+  -if provile.speaker
+    =Haml::Engine.new(profile.speaker.bio).render
