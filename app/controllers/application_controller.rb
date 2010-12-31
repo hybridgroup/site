@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     @ruby = Sponsor.ruby.all
     @gold = Sponsor.gold.all
     @silver = Sponsor.silver.all
-    @sponsors = Sponsor.all :order => 'sponsor_level, sponsor_date desc'
+    @sponsors = Sponsor.all :order => 'sponsor_level, sponsor_date asc'
   end
 
   def set_time_zone
