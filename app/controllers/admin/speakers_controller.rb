@@ -1,4 +1,4 @@
-class Admin::SpeakersController < ApplicationController
+class Admin::SpeakersController < Admin::Controller
 
   layout "admin"
 

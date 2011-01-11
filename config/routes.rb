@@ -39,6 +39,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :news_items
     admin.resources :sponsors
     admin.resources :presentations
+    admin.resources :proposals
     admin.resources :speakers
     admin.resources :feedbacks,
       :collection => {:search => :get},

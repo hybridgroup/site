@@ -1,4 +1,4 @@
-class Admin::NewsItemsController < ApplicationController
+class Admin::NewsItemsController < Admin::Controller
 
   layout "admin"
 

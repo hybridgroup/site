@@ -1,0 +1,26 @@
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    %h1 Administration
+=render :partial => 'admin/navigation'
+.module
+  .module-inner
+  %h2 Proposals
+
+.module
+  =render :partial => 'shared/corners'
+  .module-inner
+    =link_to 'Add Proposal', new_admin_proposal_path
+    %table.admin
+      %tr
+        %th
+          id
+        %th
+          User
+        %th
+          Title
+        %th
+          Abstract
+        %th
+          Actions
+      =render :partial => 'proposal', :collection => @proposals

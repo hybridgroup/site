@@ -1,4 +1,4 @@
-class Admin::FeedbacksController < ApplicationController
+class Admin::FeedbacksController < Admin::Controller
   
   layout "admin"
 

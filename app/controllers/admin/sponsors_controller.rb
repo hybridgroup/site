@@ -27,7 +27,7 @@ class Admin::SponsorsController < Admin::Controller
 
   def update
     @sponsor = Sponsor.find(params[:id])
-    
+
     unless params[:commit] == "Cancel"
       @sponsor.attributes = params[:sponsor]
 

@@ -1,0 +1,11 @@
+%tr
+  %td
+    =proposal.id
+  %td
+    =proposal.user unless proposal.user.nil?
+  %td
+    =proposal.title
+  %td
+    =proposal.abstract
+  %td
+    =link_to 'Edit', edit_admin_proposal_path(proposal)
