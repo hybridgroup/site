@@ -53,7 +53,10 @@ class Profile < ActiveRecord::Base
   end
 
   def record_activity
-    self.user.activities.create!(
-       :message => "updated their profile, now #{percent_complete.to_i}% complete")
+    if self.user
+      self.user.activities.create!(
+                                   :message => "updated their profile, 
+                                   now #{percent_complete.to_i}% complete")
+    end
   end
 end
