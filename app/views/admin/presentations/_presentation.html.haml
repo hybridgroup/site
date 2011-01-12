@@ -6,6 +6,8 @@
   %td
     =presentation.title
   %td
+    =link_to(presentation.proposal.id, admin_proposal_path(presentation.proposal)) unless presentation.proposal.nil?
+  %td
     =display_speakers(presentation)
   %td
     =link_to 'Edit', edit_admin_presentation_path(presentation)

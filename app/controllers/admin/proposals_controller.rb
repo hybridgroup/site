@@ -6,11 +6,18 @@ class Admin::ProposalsController < Admin::Controller
   end
 
   def new
+    @users = User.find(:all, :order => 'username desc')
     @proposal = Proposal.new
   end
 
   def edit
+    @users = User.find(:all, :order => 'username desc')
     @proposal = Proposal.find(params[:id])
+  end
+
+  def show
+    edit
+    render :action => 'edit'
   end
 
   def update

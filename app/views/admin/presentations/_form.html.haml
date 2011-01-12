@@ -5,5 +5,7 @@
   .form-field.required
     =f.label :place_holder, "Title"
     =f.text_field :place_holder
-
+  .form-field.required
+    =f.label :proposal, "Proposal"
+    =f.collection_select :proposal_id, @proposals, :id, :title
   =f.submit "Save", :class => "button"

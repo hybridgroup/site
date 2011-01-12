@@ -11,6 +11,7 @@ class Admin::PresentationsController < Admin::Controller
   end
 
   def edit
+    @proposals = Proposal.all :order => 'updated_at desc'
     @presentation = Presentation.find(params[:id])
   end
 

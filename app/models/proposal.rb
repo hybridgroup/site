@@ -5,6 +5,9 @@ class Proposal < ActiveRecord::Base
              :class_name => 'User',
              :foreign_key => 'reviewed_by_user_id'
 
+
+  has_one :presentation
+
   has_many :votes
 
   has_many :comments, :class_name => "ProposalComment"

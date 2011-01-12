@@ -2,10 +2,14 @@
   %td
     =proposal.id
   %td
-    =proposal.user unless proposal.user.nil?
+    =proposal.user.username unless proposal.user.nil?
   %td
     =proposal.title
   %td
     =proposal.abstract
+  %td
+    =proposal.status
+  %td
+    =proposal.presentation.nil? ? "No" : link_to(proposal.presentation.id,edit_admin_presentation_path(proposal.presentation))
   %td
     =link_to 'Edit', edit_admin_proposal_path(proposal)
