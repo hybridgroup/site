@@ -17,14 +17,7 @@
             %li
               =link_to "Logout", session_path, :method => :delete
   #top-announcement
-    -if Date.today < Date.parse('2011-02-03')
-      LA Ruby Conference 2011 is only
-      =distance_of_time_in_words(Date.today,Date.parse('2011-02-03')) 
-      away!
-    -else
-      LA Ruby Conference 2011 was
-      =distance_of_time_in_words(Date.today,Date.parse('2011-02-03')) 
-      ago.
+    =random_tag_line
     #sub-top-announcement
       -if Date.today < Date.parse('2010-12-14')
         You 

@@ -1,4 +1,29 @@
 module ApplicationHelper
+  def days_til_event
+    results = ""
+    if Date.today < Date.parse('2011-02-03')
+      results = " Only "
+      results += distance_of_time_in_words(Date.today,Date.parse('2011-02-03')).to_s
+      results += " until the Workshops and Conference begin."
+    else
+      results = "LA Ruby Conference 2011 was <strong>"
+      results += distance_of_time_in_words(Date.today,Date.parse('2011-02-03')) 
+      results += "</strong> ago."
+    end
+    return results
+  end
+
+  def random_tag_line
+    @conference = Presentation.find(:all,
+                                    :order => 'presentation_date_time',
+                                    :conditions =>
+                        ['presentation_date_time > ?', '2011-02-05 12:00 AM']
+                                    )
+    @presentation = @conference[rand(@conference.count)]
+
+    "Don't miss #{@presentation.title} by #{display_speakers(@presentation)}!"
+  end
+
   def big_number value, cols = 3
     value = value.to_i
     case
