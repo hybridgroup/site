@@ -18,10 +18,14 @@ class Sponsor < ActiveRecord::Base
                                           "3-SILVER"],
                           :order => 'sponsor_date desc'
 
+  named_scope :bronze,    :conditions => ["upper(SPONSOR_LEVEL) = ?",
+                                          "4-Bronze"],
+                          :order => 'sponsor_date desc'
+
   has_attached_file :logo, :styles => {
     :default_url => '/sponsors/'}
 
-  SPONSOR_LEVELS = ['1-Ruby','2-Gold','3-Silver','4-Media']
+  SPONSOR_LEVELS = ['1-Ruby','2-Gold','3-Silver','4-Bronze','9-Media']
 
   before_create :set_sponsor_date
 
@@ -39,6 +43,8 @@ class Sponsor < ActiveRecord::Base
       when 3
       "Silver"
       when 4
+      "Bronze"
+      when 9
       "Media"
       else
       "{missing}"
