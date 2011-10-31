@@ -4,7 +4,7 @@ begin ; deploy_env; rescue NameError; set :deploy_env, 'integration' end
 
 set :user, 'laprod'
 set :domain, 'larubyconf.com'
-set :project, 'larc2010'
+set :project, 'larc2011'
 
 # version control config
 set :scm, 'git'
@@ -15,17 +15,13 @@ set :branch, "master"
 
 set :deploy_via, :copy
 
-set :application, "2010.larubyconf.com"
+set :application, "2011.larubyconf.com"
 
 set :home_dir, "/home/#{user}"
 
 case deploy_env
-when 'prod2'
-  set :application, "larubyconf"
-  role :web, '173.203.199.95'
-  role :app, '173.203.199.95'
 when 'integration'
-  set :application, "2010.#{domain}"
+  set :application, "2011.#{domain}"
   role :web, domain
   role :app, domain
 when 'production'

@@ -8,3 +8,4 @@ gem 'rdiscount'
 gem 'facebooker'
 gem 'exceptional',   "~> 2.0"
 gem 'rack',          "~>1.0.1"
+gem 'newrelic_rpm'
