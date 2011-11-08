@@ -18,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :sponsors
-  map.resources :proposals, 
+  map.resources :proposals,
     :member => { :view_comments => :post },
     :member => { :liked => :get } do |proposal|
     proposal.resources :comments

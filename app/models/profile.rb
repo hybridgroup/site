@@ -7,13 +7,15 @@ class Profile < ActiveRecord::Base
 
   has_many :links
 
-  has_attached_file :avatar, :styles => {
-    :large => '300x300>',
-    :medium => '200x200>', 
-    :thumb => '100x100>',
-    :icon => '80x80>',
-    :tiny => '50x50>',
-    :default_url => '/avatars/:style/missing.png'}
+  has_attached_file :avatar, 
+                    :styles => {
+                            :large => '300x300>',
+                            :medium => '200x200>', 
+                            :thumb => '100x100>',
+                            :icon => '80x80>',
+                            :tiny => '50x50>'
+                    },
+                    :default_url => '/avatars/missing_:style.png'
 
   belongs_to :user
 
