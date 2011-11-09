@@ -11,11 +11,9 @@ set :scm, 'git'
 set :scm_username, 'deploy'
 set :scm_password, 'larubyconf'
 set :repository, "git@github.com:larubyconf/site"
-set :branch, "master"
+set :branch, "2012"
 
 set :deploy_via, :copy
-
-set :application, "2011.larubyconf.com"
 
 set :home_dir, "/home/#{user}"
 
