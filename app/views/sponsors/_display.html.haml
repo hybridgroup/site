@@ -1,12 +1,18 @@
-%h2 
+%h2
   =link_to 'Sponsors', sponsors_path
-%dl.sponsor
-  -prev_level = ""
-  -@sponsors.each do |sponsor|
-    -unless prev_level == sponsor.sponsorship_title
-      %dt
-        =sponsor.sponsorship_title
-        -prev_level = sponsor.sponsorship_title
-        Sponsors
-    %dd
-      =link_to image_tag(sponsor.logo.url), sponsor_path(sponsor)
+#announcement
+  %dl.sponsor
+    -prev_level = ""
+    -@sponsors.each do |sponsor|
+      -unless prev_level == sponsor.sponsorship_title
+        %dt
+          =sponsor.sponsorship_title
+          -prev_level = sponsor.sponsorship_title
+          Sponsors
+        %dd
+          =link_to image_tag(sponsor.logo.url), sponsor_path(sponsor)
+  %h3
+    Be a Sponsor
+  %p
+    If you are interested in sponsoring the Los Angeles Ruby Conference for 2012 please download the 
+    ="#{link_to 'prospectus', "/media/2012-la-ruby-conf-sponsorship-prospectus.pdf", :target => 'blank'}."
