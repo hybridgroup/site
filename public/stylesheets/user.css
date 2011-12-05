@@ -1,0 +1,813 @@
+/* PAGE LAYOUT --------------------------------------- */
+div#left-column {
+  float: left;
+  width: 300px;
+  margin: 0 15px 0 0; }
+
+div#right-column {
+  margin: 0;
+  float: left;
+  width: 640px; }
+
+/* LEFT COLUMN MODULES ------------------------------------ */
+div#left-column div.module h2 {
+  color: silver;
+  background: #76acc9 url(/images/leftcol-h2name-top.png) top left no-repeat;
+  width: 278px; }
+  div#left-column div.module h2 span {
+    background: transparent url(/images/leftcol-h2name-bottom.png) bottom left no-repeat;
+    display: block;
+    padding: 5px 10px; }
+    div#left-column div.module h2 span a {
+      color: white; }
+
+/* USER NAME AND DISPLAY -------------------------------- */
+div#user-info {
+  text-align: center; }
+  div#user-info div.usericon {
+    margin: 10px auto;
+    padding-bottom: 7px;
+    background: transparent url(/images/usericon-shadow.png) bottom center no-repeat; }
+    div#user-info div.usericon .img {
+      width: 258px;
+      margin: 0 auto;
+      padding: 5px;
+      border: 1px solid;
+        border-color: #dcdcdc; }
+      .ie6 div#user-info div.usericon .img {
+        padding-bottom: 2px;
+        width: 270px; }
+  div#user-info p.friend-connections {
+    text-align: center;
+    font-size: 1.6em;
+    line-height: 1.3; }
+  div#user-info ul {
+    margin-top: 10px;
+    text-align: center; }
+    div#user-info ul li {
+      display: inline;
+      padding: 0 5px; }
+
+/* FRIEND REQUESTS SIDE MODULE-------------------------------- */
+div#friend-requests p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #888888;
+  padding-left: 35px;
+  background: transparent url(/images/history-scroll-right.gif) left 3px no-repeat;
+  position: relative; }
+  div#friend-requests p.count {
+    background-image: url(/images/icons/services/email.png); }
+  div#friend-requests p.block {
+    background-image: url(/images/icons/block-friend.png); }
+  div#friend-requests p.friends {
+    background-image: url(/images/icons/friend-confirmation.png); }
+  div#friend-requests p.add-friend {
+    background: none;
+    padding: 0; }
+
+/* FRIENDS LIST ------------------------------------ */
+.ie6 div#user-friends-list .bl, .ie6 div#user-friends-list .br {
+  bottom: -2px; }
+.ie6 div#user-friends-list div.pagination-background {
+  width: 300px; }
+div#user-friends-list h3 {
+  margin-bottom: 0; }
+div#user-friends-list ul.friends-actions {
+  text-align: right;
+  margin: 10px 0;
+  padding-right: 5px; }
+  div#user-friends-list ul.friends-actions li {
+    display: inline;
+    margin: 0 0 0 10px; }
+    div#user-friends-list ul.friends-actions li.see-all a {
+      background: transparent url(/images/see-all-button.png) left center no-repeat; }
+    div#user-friends-list ul.friends-actions li.add a {
+      background: transparent url(/images/add-button.png) left center no-repeat; }
+    div#user-friends-list ul.friends-actions li a {
+      display: inline-block;
+      height: 18px;
+      padding-left: 23px;
+      color: #666666;
+      font-size: 1.2em;
+      font-weight: bold; }
+div#user-friends-list div.friends-row {
+  padding-bottom: 10px;
+  display: block;
+  clear: both;
+  overflow: hidden;
+  height: 1%; }
+  div#user-friends-list div.friends-row div.friend {
+    display: block;
+    float: left;
+    width: 33%;
+    margin: 0;
+    text-align: center; }
+    div#user-friends-list div.friends-row div.friend img {
+      margin: 0 auto;
+      float: none; }
+    div#user-friends-list div.friends-row div.friend p.friend-name {
+      font-size: 1.1em;
+      display: block;
+      margin-top: 3px; }
+
+/* OTHERS LIKE ------------------------------------------- */
+div#others-like li {
+  overflow: hidden;
+  padding: 10px 0;
+  border-bottom: 1px dotted #c9e0ed; }
+  div#others-like li:last-child {
+    border: 0; }
+  div#others-like li span.buzz {
+    float: left;
+    display: inline;
+    width: 50px;
+    height: 40px;
+    padding-top: 4px;
+    margin-right: 10px;
+    text-align: center;
+    background: url(/images/buzz-bubble.gif) top left no-repeat;
+      background-color: white;
+    color: #8fc26b;
+    font: bold 2.4em Arial, Helvetica, sans-serif; }
+  div#others-like li span.description {
+    float: left;
+    display: inline;
+    width: 215px;
+    font-size: 1.1em;
+    color: #888888; }
+
+/* RIGHT COLUMN MODULES ---------------------------------- */
+div#right-column div.module h2 {
+  height: 24px;
+  background: transparent url(/images/rightcol-wide-header.png) no-repeat top left;
+  padding: 5px 10px; }
+  .ie6 div#right-column div.module h2 {
+    height: 34px; }
+
+ul#main-tabs {
+  padding-left: 25px;
+  overflow: hidden;
+  height: 1%;
+  z-index: 0; }
+  ul#main-tabs li {
+    float: left;
+    display: inline;
+    height: 29px;
+    position: relative;
+    font: normal 2.3em Georgia, "Times New Roman", Times, serif;
+    color: #666666;
+    padding-top: 6px;
+    text-align: center;
+    cursor: pointer; }
+    .ie6 ul#main-tabs li {
+      height: 46px; }
+    ul#main-tabs li.active {
+      color: white; }
+    ul#main-tabs li:hover {
+      color: black; }
+    ul#main-tabs li a {
+      color: #666666;
+      text-decoration: none; }
+      ul#main-tabs li a:hover {
+        color: black; }
+
+#sub-tabs, #favorites-header {
+  background: #7fb2ce url(../images/profile-tabs-bottom-shadow.gif) bottom left no-repeat;
+  position: relative; }
+  #sub-tabs ul, #favorites-header ul {
+    background: transparent url(../images/profile-tabs-corners.gif) top center no-repeat;
+    padding: 7px 0;
+    text-align: center;
+    overflow: hidden;
+    height: 1%; }
+    #sub-tabs ul li, #favorites-header ul li {
+      display: inline;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0 10px;
+      border-right: 1px solid white; }
+      #sub-tabs ul li.active, #favorites-header ul li.active {
+        color: #333333; }
+      #sub-tabs ul li.recent-favorites-tab, #favorites-header ul li.recent-favorites-tab {
+        border: 0; }
+      #sub-tabs ul li a, #favorites-header ul li a {
+        color: white; }
+
+/* USER PROFILE PAGE --------------------------------------- */
+div#profile ul#main-tabs, div#friends ul#main-tabs {
+  position: relative;
+  height: 35px;
+  float: none;
+  display: block; }
+  div#profile ul#main-tabs li, div#friends ul#main-tabs li {
+    position: absolute;
+    top: 0;
+    z-index: 200;
+    background: transparent url(/images/profile-tabs.png) no-repeat;
+    overflow: hidden; }
+    div#profile ul#main-tabs li.active, div#friends ul#main-tabs li.active {
+      z-index: 300; }
+    div#profile ul#main-tabs li#buzz-feed-tab, div#friends ul#main-tabs li#buzz-feed-tab {
+      width: 200px;
+      background-position: 0 -35px; }
+      div#profile ul#main-tabs li#buzz-feed-tab.active, div#friends ul#main-tabs li#buzz-feed-tab.active {
+        width: 213px;
+        background-position: 0 0; }
+    div#profile ul#main-tabs li#my-favorites-tab, div#friends ul#main-tabs li#my-favorites-tab {
+      width: 158px;
+      left: 229px;
+      background-position: 0 -105px; }
+      div#profile ul#main-tabs li#my-favorites-tab.active, div#friends ul#main-tabs li#my-favorites-tab.active {
+        width: 177px;
+        left: 220px;
+        background-position: 0 -70px; }
+    div#profile ul#main-tabs li#friends-tab, div#friends ul#main-tabs li#friends-tab {
+      width: 145px;
+      left: 391px;
+      background-position: 0 -175px; }
+      div#profile ul#main-tabs li#friends-tab.active, div#friends ul#main-tabs li#friends-tab.active {
+        width: 165px;
+        left: 382px;
+        background-position: 0 -140px; }
+div#profile .module, div#friends .module {
+  border-top: 0; }
+  .ie6 div#profile .module .bl, .ie6 div#profile .module .br, .ie6 div#friends .module .bl, .ie6 div#friends .module .br {
+    bottom: -2px; }
+.ie6 div#profile div.pagination-background, .ie6 div#friends div.pagination-background {
+  width: 640px; }
+div#profile li.single-question .container h4, div#friends li.single-question .container h4 {
+  padding-left: 15px; }
+div#profile li.single-question .answer-container h4, div#friends li.single-question .answer-container h4 {
+  padding-left: 0; }
+div#profile li.single-question .question-box, div#friends li.single-question .question-box {
+  clear: both;
+  width: 475px; }
+  .ie6 div#profile li.single-question .question-box, .ie6 div#friends li.single-question .question-box {
+    width: 495px; }
+div#profile li.single-question p.archive, div#friends li.single-question p.archive {
+  padding-left: 15px;
+  font-size: 1.2em; }
+div#profile li.answer-count, div#profile li.answer-this, div#friends li.answer-count, div#friends li.answer-this {
+  font-size: 1.1em; }
+div#profile #my-questions-content, div#friends #my-questions-content {
+  overflow: hidden; }
+  div#profile #my-questions-content ul.actions, div#friends #my-questions-content ul.actions {
+    float: right;
+    padding-right: 25px; }
+    div#profile #my-questions-content ul.actions li, div#friends #my-questions-content ul.actions li {
+      display: inline; }
+      div#profile #my-questions-content ul.actions li.time, div#friends #my-questions-content ul.actions li.time {
+        padding-left: 10px; }
+  div#profile #my-questions-content ul.answered, div#friends #my-questions-content ul.answered {
+    padding-right: 40px; }
+div#profile #my-inquiries-content div.answers, div#friends #my-inquiries-content div.answers {
+  padding: 0 0 0 15px; }
+  div#profile #my-inquiries-content div.answers div.container h4, div#friends #my-inquiries-content div.answers div.container h4 {
+    padding-left: 0; }
+  div#profile #my-inquiries-content div.answers div.container div.business-activity-listing, div#friends #my-inquiries-content div.answers div.container div.business-activity-listing {
+    margin-bottom: 10px; }
+div#profile #my-inquiries-content ul.actions, div#friends #my-inquiries-content ul.actions {
+  padding-right: 25px; }
+div#profile #recent-favorites-content div.container h4, div#friends #recent-favorites-content div.container h4 {
+  margin-top: 0; }
+div#profile #recent-favorites-content div.question-box, div#friends #recent-favorites-content div.question-box {
+  margin-bottom: 0; }
+div#profile #recent-favorites-content div.answers, div#friends #recent-favorites-content div.answers {
+  padding-top: 10px; }
+div#profile #recent-favorites-content div.answer-container, div#friends #recent-favorites-content div.answer-container {
+  border: 0;
+  padding-left: 15px; }
+  div#profile #recent-favorites-content div.answer-container h4, div#friends #recent-favorites-content div.answer-container h4 {
+    float: none; }
+div#profile #recent-favorites-content div.business-activity-listing, div#friends #recent-favorites-content div.business-activity-listing {
+  float: none; }
+div#profile #recent-favorites-content a.more-answers, div#friends #recent-favorites-content a.more-answers {
+  padding-left: 15px; }
+div#profile div.answers, div#friends div.answers {
+  padding-top: 20px;
+  height: 1%; }
+div#profile div#my-favorites-content #favorites-header li.add, div#friends div#my-favorites-content #favorites-header li.add {
+  border: 0;
+  float: right; }
+  div#profile div#my-favorites-content #favorites-header li.add a, div#friends div#my-favorites-content #favorites-header li.add a {
+    display: block;
+    padding-left: 21px;
+    background: transparent url(../images/add-button.png) left center no-repeat;
+    cursor: pointer; }
+div#profile div#my-favorites-content ul.actions li.time, div#friends div#my-favorites-content ul.actions li.time {
+  border: 0; }
+div#profile div#my-favorites-content li.favorite, div#friends div#my-favorites-content li.favorite {
+  overflow: hidden;
+  border-bottom: 1px dotted #c9e0ed;
+  padding: 10px 0;
+  position: relative; }
+  .ie6 div#profile div#my-favorites-content li.favorite, .ie6 div#friends div#my-favorites-content li.favorite {
+    zoom: 1; }
+  div#profile div#my-favorites-content li.favorite:last-child, div#friends div#my-favorites-content li.favorite:last-child {
+    border: 0; }
+  div#profile div#my-favorites-content li.favorite img.biz-img, div#friends div#my-favorites-content li.favorite img.biz-img {
+    float: left;
+    width: 76px;
+    height: 76px;
+    margin-right: 10px; }
+  div#profile div#my-favorites-content li.favorite div.business-info, div#friends div#my-favorites-content li.favorite div.business-info {
+    float: left;
+    width: 230px;
+    min-height: 82px;
+    padding-right: 10px;
+    color: #555555;
+    background: white url(/images/favorites-bubbles.gif) 50% 50% no-repeat; }
+    .ie6 div#profile div#my-favorites-content li.favorite div.business-info, .ie6 div#friends div#my-favorites-content li.favorite div.business-info {
+      width: 240px;
+      height: 82px; }
+    div#profile div#my-favorites-content li.favorite div.business-info h4, div#friends div#my-favorites-content li.favorite div.business-info h4 {
+      font-size: 2.1em;
+      font-weight: normal; }
+    div#profile div#my-favorites-content li.favorite div.business-info h5, div#friends div#my-favorites-content li.favorite div.business-info h5 {
+      font-size: 1em;
+      font-weight: normal; }
+    div#profile div#my-favorites-content li.favorite div.business-info p.category, div#friends div#my-favorites-content li.favorite div.business-info p.category {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #8fc26b; }
+  div#profile div#my-favorites-content li.favorite div.clear, div#friends div#my-favorites-content li.favorite div.clear {
+    clear: right; }
+  div#profile div#my-favorites-content li.favorite ul.buzz-info, div#friends div#my-favorites-content li.favorite ul.buzz-info {
+    clear: right;
+    float: left;
+    overflow: hidden; }
+    div#profile div#my-favorites-content li.favorite ul.buzz-info li, div#friends div#my-favorites-content li.favorite ul.buzz-info li {
+      float: left;
+      border-left: 1px dotted;
+        border-left-color: #79b2d2;
+      font-size: 1.1em;
+      color: #666666;
+      text-align: center; }
+      div#profile div#my-favorites-content li.favorite ul.buzz-info li span, div#friends div#my-favorites-content li.favorite ul.buzz-info li span {
+        display: block;
+        font-size: 2em;
+        font-weight: bold;
+        color: #8fc26b; }
+      div#profile div#my-favorites-content li.favorite ul.buzz-info li.friends, div#friends div#my-favorites-content li.favorite ul.buzz-info li.friends {
+        width: 85px; }
+      div#profile div#my-favorites-content li.favorite ul.buzz-info li.fof, div#friends div#my-favorites-content li.favorite ul.buzz-info li.fof {
+        width: 115px; }
+      div#profile div#my-favorites-content li.favorite ul.buzz-info li.buzz, div#friends div#my-favorites-content li.favorite ul.buzz-info li.buzz {
+        width: 80px; }
+        div#profile div#my-favorites-content li.favorite ul.buzz-info li.buzz span, div#friends div#my-favorites-content li.favorite ul.buzz-info li.buzz span {
+          line-height: 2; }
+  div#profile div#my-favorites-content li.favorite ul.actions, div#friends div#my-favorites-content li.favorite ul.actions {
+    float: right;
+    margin-bottom: 10px; }
+    div#profile div#my-favorites-content li.favorite ul.actions li, div#friends div#my-favorites-content li.favorite ul.actions li {
+      display: inline; }
+      div#profile div#my-favorites-content li.favorite ul.actions li.remove, div#friends div#my-favorites-content li.favorite ul.actions li.remove {
+        padding-left: 20px; }
+
+/* USER EDIT SETTINGS PAGE ------------------------------ */
+div#edit-settings {
+  height: 1%; }
+  div#edit-settings .module {
+    border-top: 0; }
+  div#edit-settings .module-inner {
+    padding: 20px; }
+  div#edit-settings p {
+    margin-bottom: 1em;
+    font-size: 1.4em; }
+  div#edit-settings table {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    width: 100%; }
+    div#edit-settings table th {
+      padding: 0 0.5em 0.5em 0; }
+    div#edit-settings table td {
+      padding: 0.5em 0; }
+  div#edit-settings form {
+    overflow: hidden;
+    height: 1%; }
+    div#edit-settings form select {
+      font-size: 1.4em;
+      margin-top: 3px;
+      padding: 2px 0; }
+    div#edit-settings form #basic-info-content p.privacy {
+      clear: both; }
+      div#edit-settings form #basic-info-content p.privacy label {
+        font-size: 1em;
+        padding-top: 0; }
+    div#edit-settings form #basic-info-content div.form-field input {
+      height: 18px;
+      width: 213px;
+      padding: 8px 10px 6px;
+      margin: 0;
+      font-size: 1.4em;
+      overflow: hidden; }
+      .ie6 div#edit-settings form #basic-info-content div.form-field input {
+        height: 32px;
+        width: 235px; }
+    div#edit-settings form #basic-info-content iframe {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 300px;
+      height: 500px;
+      margin: 0;
+      padding: 0; }
+    div#edit-settings form #basic-info-content .autocomplete {
+      width: 235px !important; }
+      .ie6 div#edit-settings form #basic-info-content .autocomplete {
+        margin: -20px 0 0 -20px; }
+    div#edit-settings form p.form-field {
+      margin-left: 130px; }
+    div#edit-settings form p label {
+      font-size: 1em;
+      width: auto; }
+    div#edit-settings form p input {
+      display: inline;
+      margin-right: 5px; }
+      div#edit-settings form p input.answer-count {
+        width: 30px; }
+    div#edit-settings form p input[type="hidden"] {
+      display: none; }
+    div#edit-settings form p select {
+      font-size: 1em; }
+    div#edit-settings form p span {
+      width: 400px;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 0.8em; }
+    div#edit-settings form fieldset legend {
+      font-size: 1.4em;
+      margin-bottom: 1em; }
+    div#edit-settings form fieldset div {
+      margin-left: 50px; }
+    div#edit-settings form span.submit {
+      float: right;
+      display: inline; }
+    div#edit-settings form div#invitations-content h3 {
+      font-size: 1.6em;
+      margin-bottom: 1em; }
+    div#edit-settings form div#invitations-content h4 {
+      border-bottom: 1px solid;
+        border-bottom-color: #79b2d2;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.5em; }
+    div#edit-settings form div#invitations-content ul {
+      margin-bottom: 20px; }
+    div#edit-settings form div#invitations-content li {
+      font-size: 1.2em;
+      line-height: 2; }
+
+/* NEW INVITATION PAGE --------------------------------- */
+#new-invitation.module {
+  margin-left: 0px; }
+  .ie6 #new-invitation.module .tr, .ie6 #new-invitation.module .br {
+    right: -2px; }
+  #new-invitation.module h3 {
+    font-size: 1.6em;
+    margin-bottom: 1em; }
+  #new-invitation.module p {
+    font-size: 1.2em;
+    margin-bottom: 1em; }
+  #new-invitation.module blockquote {
+    margin-left: 2em;
+    font-size: 1.2em;
+    font-style: italic; }
+  #new-invitation.module form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold; }
+  #new-invitation.module form input {
+    margin-bottom: 10px;
+    padding: 3px; }
+  #new-invitation.module form textarea {
+    width: 300px;
+    height: 100px;
+    padding: 5px;
+    margin-bottom: 10px; }
+    .ie6 #new-invitation.module form textarea {
+      width: 310px; }
+
+/* TWITTER INVITE PAGE ------------------------- */
+#twitter p {
+  font-size: 1.4em;
+  line-height: 1.5;
+  margin-bottom: 1em; }
+
+/* FRIENDS PAGE ------------------------------ */
+div#friends ul.friend-list {
+  overflow: hidden;
+  line-height: 1.5; }
+  div#friends ul.friend-list li {
+    padding: 10px 0;
+    border-bottom: 1px dotted #c9e0ed;
+    position: relative;
+    overflow: hidden;
+    height: 1%; }
+  div#friends ul.friend-list img.usericon {
+    float: left;
+    display: inline;
+    margin-right: 10px; }
+  div#friends ul.friend-list div.friend-info {
+    height: 60px; }
+  div#friends ul.friend-list p.friend-name {
+    font-size: 1.4em;
+    font-weight: bold; }
+  div#friends ul.friend-list p.email {
+    color: #888888;
+    font-weight: bold; }
+  div#friends ul.friend-list div.service-icons {
+    height: 16px; }
+    div#friends ul.friend-list div.service-icons img {
+      display: inline; }
+div#friends div.friend-controls {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  width: 5.5em; }
+  div#friends div.friend-controls a.edit {
+    float: left;
+    display: inline;
+    font-size: 1.2em; }
+  div#friends div.friend-controls a.remove-button {
+    float: right;
+    margin-left: 10px; }
+  div#friends div.friend-controls input.button {
+    margin: 0 auto; }
+div#friends div#requests-content h2 {
+  padding: 0 0 5px;
+  height: auto;
+  background: transparent;
+  border-bottom: 1px solid;
+    border-bottom-color: #c9e0ed; }
+div#friends div#requests-content ul {
+  margin-bottom: 10px; }
+div#friends div#requests-content li {
+  overflow: hidden;
+  height: 1%;
+  padding: 10px 0;
+  border-bottom: 1px dotted #c9e0ed;
+  font-weight: bold; }
+  div#friends div#requests-content li p.name {
+    font-size: 1.4em; }
+  div#friends div#requests-content li p.friend-actions {
+    font-size: 1.1em;
+    line-height: 1.5; }
+div#friends div#requests-content h3 {
+  font: normal 1.8em Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 0.5em; }
+div#friends div#invitations {
+  padding-top: 10px; }
+  div#friends div#invitations h3.invitation-count {
+    font-size: 1.6;
+    font-weight: bold;
+    margin-bottom: 1em;
+    font-family: "Lucida Grande", Arial, Helvetica, sans-serif; }
+  div#friends div#invitations li {
+    font-size: 1.2em;
+    line-height: 1.5;
+    padding-bottom: 10px;
+    padding-top: 0;
+    margin-bottom: 10px; }
+  div#friends div#invitations div.question-box {
+    font-style: italic;
+    font-weight: normal;
+    margin: 5px 0 0;
+    color: #888888; }
+  div#friends div#invitations a.delete {
+    margin-left: 15px;
+    font-weight: normal; }
+  div#friends div#invitations span.submit, div#friends div#invitations a.button {
+    width: 200px; }
+div#friends div#add-friends-content {
+  overflow: hidden; }
+  div#friends div#add-friends-content div.search-members-section, div#friends div#add-friends-content div.import-friend-section {
+    margin-bottom: 30px;
+    overflow: hidden;
+    height: 1%; }
+    div#friends div#add-friends-content div.search-members-section input, div#friends div#add-friends-content div.import-friend-section input {
+      display: inline;
+      vertical-align: middle; }
+  div#friends div#add-friends-content h2 {
+    padding: 0 0 5px;
+    height: auto;
+    background: transparent;
+    color: #666666;
+    border-bottom: 1px solid;
+      border-bottom-color: #c9e0ed; }
+  div#friends div#add-friends-content input, div#friends div#add-friends-content textarea {
+    border-color: #c1c1c1; }
+  div#friends div#add-friends-content input {
+    padding: 3px 6px;
+    height: 18px;
+    width: 218px;
+    margin-right: 10px;
+    font-size: 1.2em; }
+    div#friends div#add-friends-content input.button {
+      width: auto;
+      height: 26px;
+      width: 127px; }
+    .ie6 div#friends div#add-friends-content input.text-box {
+      height: 24px;
+      width: 230px; }
+  div#friends div#add-friends-content textarea {
+    padding: 6px;
+    font: normal 1.2em "Lucida Grande", Arial, Helvetica, sans-serif; }
+  div#friends div#add-friends-content div#search-results {
+    clear: both;
+    padding-top: 30px;
+    overflow: hidden;
+    height: 1%; }
+    div#friends div#add-friends-content div#search-results li {
+      float: left;
+      display: inline;
+      text-align: center;
+      width: 152px;
+      height: 122px;
+      padding-bottom: 20px;
+      line-height: 1.5;
+      font-size: 1.2em; }
+      .ie6 div#friends div#add-friends-content div#search-results li {
+        height: 132px; }
+      div#friends div#add-friends-content div#search-results li img.usericon {
+        float: none;
+        margin: 0; }
+      div#friends div#add-friends-content div#search-results li p.friend-location {
+        color: #888888; }
+  div#friends div#add-friends-content div.import-friend-section li {
+    padding-left: 21px;
+    font-size: 1.2em;
+    line-height: 2;
+    list-style-position: inside; }
+    div#friends div#add-friends-content div.import-friend-section li.facebook {
+      background: transparent url(/images/icons/services/facebook.png) left center no-repeat; }
+    div#friends div#add-friends-content div.import-friend-section li.buzz {
+      background: transparent url(/images/icons/services/buzz.png) left center no-repeat; }
+    div#friends div#add-friends-content div.import-friend-section li.twitter {
+      background: transparent url(/images/icons/services/twitter.png) left center no-repeat; }
+  div#friends div#add-friends-content div.invite-friend-section {
+    overflow: hidden;
+    height: 1%; }
+    div#friends div#add-friends-content div.invite-friend-section h3 {
+      font-size: 1.2em;
+      padding-bottom: 5px; }
+    div#friends div#add-friends-content div.invite-friend-section p.instructions {
+      padding: 10px 0 5px; }
+    div#friends div#add-friends-content div.invite-friend-section label, div#friends div#add-friends-content div.invite-friend-section span {
+      font-size: 1.2em; }
+    div#friends div#add-friends-content div.invite-friend-section label {
+      font-weight: bold;
+      width: 75px;
+      text-align: right;
+      margin-right: 10px; }
+    div#friends div#add-friends-content div.invite-friend-section input {
+      margin-right: 5px; }
+    div#friends div#add-friends-content div.invite-friend-section span {
+      float: left;
+      display: block;
+      padding-top: 5px;
+      color: #888888; }
+    div#friends div#add-friends-content div.invite-friend-section p.instruction {
+      clear: both;
+      padding: 5px 0 20px;
+      color: #888888; }
+      .ie div#friends div#add-friends-content div.invite-friend-section p.instruction {
+        padding-top: 0;
+        margin-top: -10px; }
+    div#friends div#add-friends-content div.invite-friend-section input.button {
+      clear: both;
+      margin-top: 10px; }
+
+div#add-friends .module-inner {
+  border: 0;
+  padding: 10px; }
+  div#add-friends .module-inner ul {
+    padding: 15px 20px; }
+    div#add-friends .module-inner ul li {
+      font-size: 1.4em;
+      padding: 0 0 10px; }
+
+.ie6 div#add-friends .bl, .ie6 div#add-friends .br {
+  bottom: -2px; }
+
+/* ADD NEW FAVORITE PAGE ----------------------------------- */
+#add-favorite {
+  width: 780px;
+  float: left; }
+  #add-favorite .module-inner {
+    padding: 20px; }
+  #add-favorite h2 {
+    margin-bottom: 1em; }
+  #add-favorite ol.steps li {
+    padding-left: 88px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #c9e0ed;
+    min-height: 58px;
+    z-index: 1000;
+    overflow: hidden; }
+    .ie6 #add-favorite ol.steps li {
+      height: 78px; }
+    #add-favorite ol.steps li label {
+      display: block;
+      font-size: 1.6em;
+      margin-bottom: 10px; }
+    #add-favorite ol.steps li input {
+      display: block;
+      width: 200px; }
+  #add-favorite ol.steps li.category {
+    background: transparent url(/images/section-bubble-1.gif) left top no-repeat; }
+  #add-favorite ol.steps li.location {
+    background: transparent url(/images/section-bubble-2.gif) left top no-repeat; }
+  #add-favorite ol.steps li.business-name {
+    background: transparent url(/images/section-bubble-3.gif) left top no-repeat; }
+  #add-favorite ol.steps div.autocomplete {
+    width: 210px !important; }
+  #add-favorite ol.steps span.submit {
+    margin-top: 10px;
+    display: block;
+    width: 150px; }
+  #add-favorite ol.steps button {
+    width: 150px; }
+  #add-favorite ol.steps p.instructions {
+    padding-left: 5px; }
+  #add-favorite div#businesses div#no-matches {
+    padding: 10px; }
+    #add-favorite div#businesses div#no-matches p {
+      font-size: 1.2em; }
+
+form.new_favorite_category_select h3, div.replace-favorite h3 {
+  font-size: 1.6em;
+  margin-bottom: 0.5em; }
+form.new_favorite_category_select p, div.replace-favorite p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 1em; }
+  form.new_favorite_category_select p span, div.replace-favorite p span {
+    font-weight: bold; }
+
+form.new_favorite_category_select {
+  height: 1%; }
+  form.new_favorite_category_select ul {
+    font-size: 1.2em; }
+    form.new_favorite_category_select ul li {
+      float: left;
+      display: inline;
+      margin-bottom: 1em;
+      width: 185px;
+      height: 2.5em;
+      line-height: 1.5; }
+  form.new_favorite_category_select span.submit {
+    clear: left;
+    float: right;
+    display: inline;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 125px; }
+    form.new_favorite_category_select span.submit input {
+      width: 125px; }
+
+div.replace-favorite a.button {
+  width: 125px;
+  float: right;
+  display: block;
+  margin-left: 10px;
+  margin-top: 20px; }
+
+/* NEW USER PAGE -------------------------------------- */
+#new-user {
+  width: 445px;
+  left: 0;
+  margin: 0 auto; }
+  #new-user .module-inner {
+    padding: 20px; }
+  #new-user h1 {
+    width: 240px;
+    height: 21px;
+    overflow: hidden;
+    text-indent: -9999px;
+    background: url(/images/create-new-user.png);
+    margin-bottom: 1em;
+    position: relative;
+    left: 25px; }
+  #new-user label {
+    width: 100px; }
+  #new-user span.submit {
+    display: block;
+    position: relative;
+    width: 125px;
+    margin: 0 auto; }
+    .ie6 #new-user span.submit {
+      left: 140px; }
+    #new-user span.submit input {
+      width: 125px; }
+  #new-user h3.terms, #new-user p.terms {
+    line-height: 1.5;
+    color: #888888; }
+  #new-user h3.terms {
+    margin: 30px 0 0.5em; }
+  #new-user p.terms {
+    margin-bottom: 1em; }
