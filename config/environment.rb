@@ -25,7 +25,7 @@ Rails::Initializer.run do |config|
   config.action_mailer.default_url_options   = { :host => 'localhost' }
 
   RFP_START = Date.parse("11/7/2011")
-  RFP_END = Date.parse("12/14/2011")
+  RFP_END = Date.parse("12/15/2011")
 end
 
 require 'will_paginate'
